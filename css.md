@@ -4,6 +4,7 @@ To keep code tidy, maintainable and a little less ugly we need to adhere to a un
 
 Consistency is key, a common formatting must be followed at all times. This is achieved through consistent syntax, commenting and naming conventions.
 
+---
 <!--
 ---
 ### Initial setup
@@ -29,7 +30,7 @@ More folders are added as shown above to the sass folder and this is so we can i
 
 ###Structure
 
-When writing out our CSS code it is essential that we make our code clean using correct standard documentation, which is also informative for not only yourself to remember what the code does but also for other programmers to follow as they might need use your code at a later date.  Create a stylesheet for each page is ideal so then there is a relation to the page and you know where to find the styles for a certain page. Don’t duplicate code, make use of the imports and only include what you require for that page. If a style is reusable make it an import, if its only relevant to that page type the code in that stylesheet.
+When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourself to remember what the code does, but also for other programmers to follow as they might need use the code at a later date. Create a seperate stylesheet for each page is ideal so then there is a relation to the html page, which saves time trawling through a single sheet to find what you want. Don’t duplicate code, make use of the imports and only include what you require for that page. If a style is reusable make it an import, if its only relevant to that page type the code in that stylesheet.
 
 When naming our files if they are a going to be used to produce a css file they are named with the extension .scss within the sass folder. This will generate a .css file in our css folder for which our html can read. When naming this file make sure it is relevant to what it will be used for so if its for our index.php file a name such as homepage.scss is relevant as we know that is the homepage stylesheet. If we need to break up a word for a file use hyphens not underscores eg: sub-page.scss and not sub_page.scss. Only use the underscores for when we are creating an import file within a certain folder, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a sheet, its importing our styles to our stylesheet instead).
 
@@ -39,10 +40,10 @@ Applying styles to html requires the use of classes (NOT ID's - it takes 256 cla
 
 ```scss
 
-  .className {} // Not good
-  .CLASSNAME {} // Not good
-  .class_name {} // Not good
-  .class-name {} // Good
+	.className {} // Not good
+	.CLASSNAME {} // Not good
+	.class_name {} // Not good
+	.class-name {} // Good
 
 ```
 Just like our folder naming make sure if we need to break up a word or attach other words together that they are connected with hyphens. Ideally, we want to apply BEM class name conventions too which would look something like this:
@@ -87,7 +88,7 @@ An example of good code markup:
 
 ```scss
 
-/* Homepage services widget section */
+/* Homepage services widget section - this includes all the services within the services section on the homepage */
 
 .services {
 	background: #FFF; /* use short-hand (wherever possible) */
