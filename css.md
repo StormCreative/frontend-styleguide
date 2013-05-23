@@ -17,10 +17,11 @@ It is important that we have a home for our code so as developers we know where 
 > assets
 	> styles
 		> sass
-			* configurations
-			* components
-			* fonts
-			* layout
-			* mixins
+		
+* configurations
+* components
+* fonts
+* layout
+* mixins
 
 More folders are added as shown above to the sass folder and this is so we can import styles into our main sheets without the duplication of code everywhere and saves time trawling through each file looking for a specific section of code to make a change, so by placing these files within the proper subfolders is important. Only make an import if it is necessary and will be used again in another sheet.
