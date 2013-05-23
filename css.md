@@ -31,13 +31,60 @@ More folders are added as shown above to the sass folder and this is so we can i
 
 When writing out our CSS code it is essential that we make our code clean using correct standard documentation, which is also informative for not only yourself to remember what the code does but also for other programmers to follow as they might need use your code at a later date.  Create a stylesheet for each page is ideal so then there is a relation to the page and you know where to find the styles for a certain page. Don’t duplicate code, make use of the imports and only include what you require for that page. If a style is reusable make it an import, if its only relevant to that page type the code in that stylesheet.
 
+When naming our files if they are a going to be used to produce a css file they are named with the extension .scss within the sass folder. This will generate a .css file in our css folder for which our html can read. When naming this file make sure it is relevant to what it will be used for so if its for our index.php file a name such as homepage.scss is relevant as we know that is the homepage stylesheet. If we need to break up a word for a file use hyphens not underscores eg: sub-page.scss and not sub_page.scss. Only use the underscores for when we are creating an import file within a certain folder, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a sheet, its importing our styles to our stylesheet instead).
+
 ###Code markup
 
-When compiling our code leave comments at the top of the page explaining what the page is with a list of the imports included. These also need to be commented briefly explaining what it is used for. 
+When compiling our code to our page leave comments at the top of the page explaining what the page is, with a list of the imports included. These also need to be commented briefly explaining what it is used for. It is important to remember that it is a Cascading Style Sheet so put the imports in an order that reflects the layout of the html page and intern helps to find where our code is within the sheet and the chances of styles being overwritten. 
 
 ```scss
-// Homepage - All styles for the homepage will be displayed here 
 
-@import “components/navigation”; // This has all the styles for the navigation
+/* Homepage - All styles for the homepage will be displayed here */
+
+@import "configurations/variables"; /* All variables regarding the sites generic featues are included within this file */
+@import "layout/structure"; /* This includes the page structure = html, body, wrapper and container classes */
+@import "components/navigation"; /* This has all the styles for the navigation */
+
+/* I show up as a comment in the produced css file */
+// I am a single line comment and wont show up in the css file when generated
 
 ```
+
+Part and parcel of programming is producing clean, and well presented code which can be followed easily. Some of the ways to help do this are displayed below:
+
+* Comment
+* Indent = ideally 4 spaces
+* Provide a space between a property and a value. (color: #FFF; NOT:- color:#FFF;)
+* Keep properties in alphabetical order (wherever possible)
+* Ensure prefixes line up
+* Nesting code
+* Not written in one line blocks
+
+An example of good code markup:
+
+```scss
+
+/* Homepage widgets section */
+
+.widget {
+	background: #FFF; /* use short-hand (wherever possible) */
+  	border: 1px solid #000;
+  	list-style: none;
+  	margin: 0; /* if 0 does not need to have px after */
+  	padding: 8px;
+
+  	/* CSS3 features are kept seperate and have the comment of CSS3 to let us know */
+  	-webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+
+    .widget__list {
+    	color: #ED1B24;
+    	display: inline-block;
+    	padding: 8px 4px; /* 8px top/bottom and 4px left/right (use short-hand) */
+    }
+}
+
+```
+
+
