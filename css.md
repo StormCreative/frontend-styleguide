@@ -5,10 +5,9 @@ To keep code tidy, maintainable and a little less ugly we need to adhere to a un
 Consistency is key, a common formatting must be followed at all times. This is achieved through consistent syntax, commenting and naming conventions.
 
 ---
-<!--
----
 ### Initial setup
----
+
+The CSS stylesheet language being used is SASS, which is a Ruby Gem and can be installed via the command line. For more information and how to install SASS please use: [http://sass-lang.com/](http://sass-lang.com/)
 
 ---
 ### Folder structure
@@ -59,7 +58,7 @@ Notice that double underscores are used to seperate our block from our elements 
 
 ###js-hooks
 
-If we are applying javascript to a class then we apply a js-hook to the name. This allows us to reuse the class for both javascript and css, knowing that is hooked to a javascript file. An example would be [.js-popup] and from this we know what the action is and can now use that class for styling purposes to.
+If we are applying javascript to a class then we apply a js-hook to the name. This allows us to reuse the class for both javascript and css, knowing that is hooked to a javascript file. An example would be .js-popup and from this we know what the action is and can now use that class for styling purposes aswell.
 
 ###Code markup
 
