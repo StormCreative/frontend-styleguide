@@ -9,9 +9,7 @@ Consistency is key, a common formatting must be followed at all times. This is a
 
 The CSS stylesheet language being used is SASS, which is a Ruby Gem and can be installed via the command line. For more information and how to install SASS please use: [http://sass-lang.com/](http://sass-lang.com/)
 
----
 ### Folder structure
----
 
 It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder of styles.  Within this subfolder is another folder, which is called sass. This will store all the sass code being used for that particular project. 
 
@@ -25,7 +23,6 @@ It is important that we have a home for our code so as developers we know where 
          	* mixins
 
 More folders are added as shown above to the sass folder and this is so we can import styles into our main sheets without the duplication of code everywhere and saves time trawling through each file looking for a specific section of code to make a change, so by placing these files within the proper subfolders is important. Only make an import if it is necessary and will be used again in another sheet.
--->
 
 ###Structure
 
