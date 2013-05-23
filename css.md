@@ -35,6 +35,27 @@ When naming our files if they are a going to be used to produce a css file they 
 
 ###Class naming convention
 
+Applying styles to html requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements and will not be included on that element anywhere else in the site unless it has the same class. Try to only apply just ONE class to an element and not multiple classes, only in certain scenarios should we do this and will be explained later. When we give a name to a class it so important for the class to be specific but also generic to what it is being applied to. Make it reusable. Examples of good class names are shown below:
+
+```scss
+
+  .className {} // Not good
+  .CLASSNAME {} // Not good
+  .class_name {} // Not good
+  .class-name {} // Good
+
+```
+Just like our folder naming make sure if we need to break up a word or attach other words together that they are connected with hyphens. Ideally, we want to apply BEM class name conventions too which would look something like this:
+
+```scss
+
+	.services {} // service Block
+	.services__list {} // service Elements
+	.services__list--websites {} // service Modifier
+
+```
+Notice that double underscores are used to seperate our block from our elements this is to easily recognise a class is part of the block. This is the only time it is acceptable to have the use of underscores for class naming.
+
 ###Code markup
 
 When compiling our code to our page leave comments at the top of the page explaining what the page is, with a list of the imports included. These also need to be commented briefly explaining what it is used for. It is important to remember that it is a Cascading Style Sheet so put the imports in an order that reflects the layout of the html page and intern helps to find where our code is within the sheet and the chances of styles being overwritten. 
@@ -66,9 +87,9 @@ An example of good code markup:
 
 ```scss
 
-/* Homepage widgets section */
+/* Homepage services widget section */
 
-.widget {
+.services {
 	background: #FFF; /* use short-hand (wherever possible) */
   	border: 1px solid #000;
   	list-style: none;
@@ -80,7 +101,7 @@ An example of good code markup:
        -moz-border-radius: 4px;
             border-radius: 4px;
 
-    .widget__list {
+    .services__list {
     	color: #ED1B24;
     	display: inline-block;
     	font-family: 'Arial';
