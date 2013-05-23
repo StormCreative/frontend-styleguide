@@ -57,6 +57,10 @@ Just like our folder naming make sure if we need to break up a word or attach ot
 ```
 Notice that double underscores are used to seperate our block from our elements this is to easily recognise a class is part of the block. This is the only time it is acceptable to have the use of underscores for class naming.
 
+###js-hooks
+
+If we are applying javascript to a class then we apply a js-hook to the name. This allows us to reuse the class for both javascript and css, knowing that is hooked to a javascript file. An example would be [.js-popup] and from this we know what the action is and can now use that class for styling purposes to.
+
 ###Code markup
 
 When compiling our code to our page leave comments at the top of the page explaining what the page is, with a list of the imports included. These also need to be commented briefly explaining what it is used for. It is important to remember that it is a Cascading Style Sheet so put the imports in an order that reflects the layout of the html page and intern helps to find where our code is within the sheet and the chances of styles being overwritten. 
