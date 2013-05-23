@@ -33,6 +33,8 @@ When writing out our CSS code it is essential that we make our code clean using 
 
 When naming our files if they are a going to be used to produce a css file they are named with the extension .scss within the sass folder. This will generate a .css file in our css folder for which our html can read. When naming this file make sure it is relevant to what it will be used for so if its for our index.php file a name such as homepage.scss is relevant as we know that is the homepage stylesheet. If we need to break up a word for a file use hyphens not underscores eg: sub-page.scss and not sub_page.scss. Only use the underscores for when we are creating an import file within a certain folder, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a sheet, its importing our styles to our stylesheet instead).
 
+###Class naming convention
+
 ###Code markup
 
 When compiling our code to our page leave comments at the top of the page explaining what the page is, with a list of the imports included. These also need to be commented briefly explaining what it is used for. It is important to remember that it is a Cascading Style Sheet so put the imports in an order that reflects the layout of the html page and intern helps to find where our code is within the sheet and the chances of styles being overwritten. 
