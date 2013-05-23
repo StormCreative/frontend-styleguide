@@ -35,11 +35,9 @@ When writing out our CSS code it is essential that we make our code clean using 
 
 When compiling our code leave comments at the top of the page explaining what the page is with a list of the imports included. These also need to be commented briefly explaining what it is used for. 
 
-<pre>
-	<code>
-		// Homepage - All styles for the homepage will be displayed here 
+```scss
+// Homepage - All styles for the homepage will be displayed here 
 
-		@import “components/navigation”; // This has all the styles for the navigation
-		
-	</code>
-</pre>
+@import “components/navigation”; // This has all the styles for the navigation
+
+```
