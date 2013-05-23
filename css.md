@@ -15,9 +15,9 @@ Consistency is key, a common formatting must be followed at all times. This is a
 It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder of styles.  Within this subfolder is another folder, which is called sass. This will store all the sass code being used for that particular project. 
 
 > assets
-	> styles
-		> sass
-		
+	-> styles
+		-> sass
+
 * configurations
 * components
 * fonts
