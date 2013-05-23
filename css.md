@@ -54,7 +54,7 @@ Part and parcel of programming is producing clean, and well presented code which
 
 * Comment
 * Indent = ideally 4 spaces
-* Provide a space between a property and a value. (color: #FFF; NOT:- color:#FFF;)
+* Provide a space between a property and a value. ( color: #FFF; )
 * Keep properties in alphabetical order (wherever possible)
 * Ensure prefixes line up
 * Nesting code
@@ -81,7 +81,9 @@ An example of good code markup:
     .widget__list {
     	color: #ED1B24;
     	display: inline-block;
-    	padding: 8px 4px; /* 8px top/bottom and 4px left/right (use short-hand) */
+    	font-family: 'Arial';
+    	font-size: 16px;
+    	padding: 8px 4px; /* use short-hand = 8px (top,bottom) and 4px (left,right) */
     }
 }
 
