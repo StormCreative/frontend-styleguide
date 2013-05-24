@@ -7,11 +7,29 @@ Consistency is key, a common formatting must be followed at all times. This is a
 ---
 ### Initial setup
 
-The CSS stylesheet language being used is SASS, which is a Ruby Gem and can be installed via the command line. For more information and how to install SASS please use: [http://sass-lang.com/](http://sass-lang.com/)
+The CSS stylesheet language being used is SASS, which is a Ruby Gem and can be installed via the command line. For more information on how to install SASS please use: [http://sass-lang.com/](http://sass-lang.com/)
 
-### Folder structure
+Once SASS is installed, create a file in the main directory called sass.sh and inside this file include the following code:
 
-It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder of styles.  Within this subfolder is another folder, which is called sass. This will store all the sass code being used for that particular project. 
+<pre>
+  <code>
+    #!/bin/sh
+
+    sass --style expanded --watch assets/styles/sass:assets/styles --debug-info
+    #sass --style compressed --watch assets/styles/sass:assets/styles
+
+    exit 0
+
+  </code>
+</pre>
+
+Comment out the sass watch that we don't want to use. In the example the css generated will be un-minified, if we commented this out and uncommented the compressed version then when we run sass in the command line with this line of code it will compress the css and make it minified.
+
+Now that the sass setup is complete, the folder structure needs to be completed to get our sass up and running.
+---
+### Folder setup and structure
+
+It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder called styles. Another folder is added inside this, which is called sass. This will store all the sass stylesheets being used for that particular project. 
 
 * assets
 	* styles
@@ -22,17 +40,34 @@ It is important that we have a home for our code so as developers we know where 
          	* layout
          	* mixins
 
-More folders are added as shown above to the sass folder and this is so we can import styles into our main sheets without the duplication of code everywhere and saves time trawling through each file looking for a specific section of code to make a change, so by placing these files within the proper subfolders is important. Only make an import if it is necessary and will be used again in another sheet.
+More folders are added as shown above to the sass folder and this is so we can import styles into our main sheets without the duplication of code everywhere. This saves time trawling through each file looking for a specific section of code to make a change, so by placing these files within the proper subfolders is important. Only make an import if it is necessary and can be usable again in another sheet.
+
+Now the folder structure is set up open the command line and access the directory for the project and run the following code:
+
+<pre>
+  <code>
+    sass --style expanded --watch assets/styles/sass:assets/styles
+  </code>
+</pre>
+
+This then starts running sass from our command line and any changes made in the sass folder updates in the css folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line:
+
+<pre>
+  <code>
+    sh sass.sh
+  </code>
+</pre>
 
 ###Structure
+---
 
-When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourself to remember what the code does, but also for other programmers to follow as they might need use the code at a later date. Create a seperate stylesheet for each page is ideal so then there is a relation to the html page, which saves time trawling through a single sheet to find what you want. Don’t duplicate code, make use of the imports and only include what you require for that page. If a style is reusable make it an import, if its only relevant to that page type the code in that stylesheet.
+When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourself to remember (what the code actually does), but also for other programmers to follow as they might need to use the code at a later date. Create a seperate stylesheet for each page, this is ideal so then there is a relation to the html page, which again saves time trawling through a single sheet to find what you want. Don’t duplicate code! Make use of the imports and only include what you require for that page. If a style (block) is reusable make it an import, if its only relevant to that page type the code in that stylesheet.
 
-When naming our files if they are a going to be used to produce a css file they are named with the extension .scss within the sass folder. This will generate a .css file in our css folder for which our html can read. When naming this file make sure it is relevant to what it will be used for so if its for our index.php file a name such as homepage.scss is relevant as we know that is the homepage stylesheet. If we need to break up a word for a file use hyphens not underscores eg: sub-page.scss and not sub_page.scss. Only use the underscores for when we are creating an import file within a certain folder, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a sheet, its importing our styles to our stylesheet instead).
+When naming our files, if they are a going to be used to produce a css file they are named with the extension .scss within the sass folder. This will generate a .css file in our css folder for which our html can read. When naming this file make sure it is relevant to what it will be used for, so if its for our home.php file a name such as homepage.scss is relevant as we know that is the homepage stylesheet. If we need to break up a word for a file use hyphens not underscores eg: sub-page.scss and not sub_page.scss. Only use the underscores for when we are creating an import file within a certain folder, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a sheet, its importing our styles to our stylesheet instead).
 
-###Class naming convention
+####Class naming convention
 
-Applying styles to html requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements and will not be included on that element anywhere else in the site unless it has the same class. Try to only apply just ONE class to an element and not multiple classes, only in certain scenarios should we do this and will be explained later. When we give a name to a class it so important for the class to be specific but also generic to what it is being applied to. Make it reusable. Examples of good class names are shown below:
+Applying styles to html requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements and will not be included on that element anywhere else in the site unless it has the same class. Try to only apply just ONE class to an element and not multiple classes, only in certain scenarios should we do this and will be explained later. When we give a name to a class it so important for the class to be specific (dont over specify) but also generic to what it is being applied to. Make it reusable. Examples of good class names are shown below:
 
 ```scss
 
@@ -53,13 +88,13 @@ Just like our folder naming make sure if we need to break up a word or attach ot
 ```
 Notice that double underscores are used to seperate our block from our elements this is to easily recognise a class is part of the block. This is the only time it is acceptable to have the use of underscores for class naming.
 
-###js-hooks
+####js-hooks
 
 If we are applying javascript to a class then we apply a js-hook to the name. This allows us to reuse the class for both javascript and css, knowing that is hooked to a javascript file. An example would be .js-popup and from this we know what the action is and can now use that class for styling purposes aswell.
 
-###Code markup
+####Code markup
 
-When compiling our code to our page leave comments at the top of the page explaining what the page is, with a list of the imports included. These also need to be commented briefly explaining what it is used for. It is important to remember that it is a Cascading Style Sheet so put the imports in an order that reflects the layout of the html page and intern helps to find where our code is within the sheet and the chances of styles being overwritten. 
+When compiling our code to our page leave comments at the top of the page explaining what the page is, with a list of the imports included. These also need to be commented briefly explaining what it is used for. It is important to remember that it is a Cascading Style Sheet so put the imports in an order that reflects the layout of the html page and intern helps to find where our code is within the sheet and reducing the chances of styles being overwritten. 
 
 ```scss
 
