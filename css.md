@@ -172,4 +172,42 @@ Earlier we looked at creating our import files, once we have added our CSS styli
 
 #### Comments
 
+You should document and comment code as much as you possibly can, what may seem or feel transparent and self explanatory to you may not be to other developers. Once you have written a block of code explain what you have just done. This will help when look at your code at a later date but more importantly works with the document styler we use called [StyleDocco](http://jacobrask.github.io/styledocco/). StyleDocco will generate a document of our commented elements so we can see them and know what styles / classes to use. To use StyleDocco make sure that the gem is already installed and run the rake command `rake styleguide`.
+
+```scss
+
+    
+    /*
+
+    STYLEDOCCO
+    ==========
+
+    This is an example of how we should comment our elements so that it will work with StyleDocco.
+
+    Here we will copy over the relevant HTML that we used to apply our styles to, making sure that it is correctly indented.
+
+        <section class="services">
+            <ul class="services__list">
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </section>
+
+    */
+
+    /*
+     * I'm another way of commenting an area of block CSS but will not work with StyleDocco very well.
+     */
+
+     // Single line comment that can be used on our CSS properties to describe what they are doing.
+
+```
+
+#### Dry
+
 #### SASS Functions
+
+### Framework
+### Grids
+### Media Queries
