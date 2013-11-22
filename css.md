@@ -205,7 +205,7 @@ You should document and comment code as much as you possibly can, what may seem 
      * I'm another way of commenting an area of block CSS but will not work with StyleDocco very well.
      */
 
-     // Single line comment that can be used on our CSS properties to describe what they are doing.
+    // Single line comment that can be used on our CSS properties to describe what they are doing.
 
 ```
 
