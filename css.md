@@ -12,14 +12,11 @@ What this document will cover:
 * [Setting up files](css.md#file-naming)
 * [CSS Structure](css.md#css-structure)
   * [Class names](css.md#class-names)
-  * BEM
-  * js-hooks
+  * [BEM](css.md#bem)
+  * [js-hooks](css.md#js-hooks)
+  * [Format](css.md#format)
   * Imports
   * Layout
-  * Format
-  * Nesting
-  * Indentation
-  * StyleDocco
   * Commenting
 * Framework
 * Grids
@@ -97,6 +94,7 @@ Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 cla
   .class_name {} // Not good
   .class-name {} // Good
   .class {} // Good
+
 ```
 
 #### BEM
@@ -114,3 +112,41 @@ If we are applying javascript to a class then we apply a js-hook to the name. Th
 
 ```
 
+#### Format
+
+Part and parcel of programming is producing clean, and well presented code which can be followed easily. It is important that we follow a strict CSS approach so that everyone understands how the code is presented and what it is actually doing. The key elements when writing our CSS are outlined below:
+
+* Comment
+* Indent = ideally 4 spaces
+* Provide a space between a property and a value. (color: #FFF;)
+* Keep properties in alphabetical order (preferable) - helps identify quicker
+* Ensure prefixes line up
+* Nesting code - NO MORE THAN 3 LEVELS DEEP
+* Not written in one line blocks
+
+An example of good code markup:
+
+```scss
+
+  .services {
+    background: #FFF; // use short-hand (wherever possible)
+    border: 1px solid #000;
+    list-style: none;
+    margin: 0;
+    padding: 0.5em; // use em measurement = 8px
+
+    // CSS3 features are kept seperate and have the comment of CSS3 to let us know
+    -webkit-border-radius: 0.25em; // use em measurement = 8px
+       -moz-border-radius: 0.25em; // use em measurement = 8px
+            border-radius: 0.25em; // use em measurement = 8px
+
+    .services__list {
+      color: #ED1B24;
+      display: inline-block;
+      font-family: 'Arial';
+      font-size: 1em; // use em measurement
+      padding: 0.5em 0.25em; // use em measurement and use short-hand = 8px (top,bottom) and 4px (left,right) */
+    }
+  }
+
+```
