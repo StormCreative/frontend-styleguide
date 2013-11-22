@@ -184,6 +184,10 @@ You should document and comment code as much as you possibly can, what may seem 
 
     This is an example of how we should comment our elements so that it will work with StyleDocco.
 
+    Within this stylesheet you will find styles for:
+
+    - SERVICES
+
     Here we will copy over the relevant HTML that we used to apply our styles to, making sure that it is correctly indented.
 
         <section class="services">
