@@ -270,6 +270,14 @@ Heres a list of sass functions that we use and what they do.
 
 Mixins
 
+- Retina
+- Image replace
+- Media Queries
+- Grid
+- Prefixes
+- Opacity
+- Font size
+
 ---
 ### Framework
 
