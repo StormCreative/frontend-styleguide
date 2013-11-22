@@ -8,8 +8,8 @@ Consistency is key, a common formatting must be followed at all times. This is a
 What this document will cover:
 
 * [Initial Setup - SASS](css.md#initial-setup)
-* Folder Structures
-* Setting up files
+* [Folder Setup](css.md#folder-setup)
+* [Setting up files](css.md#file-naming)
 * Imports
 * CSS structure / Layout / Format / Nesting / Indentation
 * Class names / js-hooks
@@ -44,9 +44,9 @@ Comment out the sass watch that we don't want to use. In the example the css gen
 Now that the sass setup is complete, the folder structure needs to be completed to get our sass up and running.
 
 ---
-### Folder setup and structure
+### Folder setup
 
-It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder called styles. Another folder is added inside this, which is called sass. This will store all the sass stylesheets being used for that particular project. 
+It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder called styles. Another folder is added inside this, which is called sass. This will store all the sass stylesheets being used for that particular project. Note: All folder names are to be in lowercase.
 
 * assets
 	* styles
@@ -58,9 +58,9 @@ It is important that we have a home for our code so as developers we know where 
       * framework
       * mixins
 
-More folders are added as shown above to the sass folder and this is so we can import styles into our main sheets without the duplication of code everywhere. This saves time trawling through each file looking for a specific section of code to make a change, so by placing these files within the proper subfolders is important. Only make an import if it is necessary and can be usable again in another sheet.
+Extra folders have been added within our sass folder, within these folders we would store relevant files that we can [import](css.md#imports) into our main stylesheets. 
 
-Now the folder structure is set up open the command line and access the directory for the project and run the following code:
+Now the main styles folder structure is set up open the command line (terminal) and access the directory for the project and run the following code:
 
 <pre>
   <code>
@@ -68,7 +68,7 @@ Now the folder structure is set up open the command line and access the director
   </code>
 </pre>
 
-This then starts running sass from our command line and any changes made in the sass folder updates in the css folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line:
+This then starts running sass from our command line and any changes made in the sass files / folders updates in the css folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line:
 
 <pre>
   <code>
@@ -76,5 +76,19 @@ This then starts running sass from our command line and any changes made in the 
   </code>
 </pre>
 
+---
+### File naming
 
+When it comes to creating the files for our stylesheets we have to make sure we use the right naming conventions in order for SASS to run correctly. If we are creating a main stylesheet that will hold all styles and be used within the HTML of our site we would give the file a relevant name such as 'styles' with the extension of .scss and add create this within the sass main folder.
+
+* sass
+  * folder
+  - styles.scss
+
+And this will generate our css file within the styles folder so would look like this.
+
+* sass
+  * folder
+  - styles.scss
+styles.css
 
