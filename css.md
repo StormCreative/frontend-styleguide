@@ -15,10 +15,10 @@ What this document will cover:
   * [BEM](css.md#bem)
   * [js-hooks](css.md#js-hooks)
   * [Format](css.md#format)
-  * Imports
-  * Layout
-  * Commenting
-  * SASS Functions
+  * [Imports](css.md#imports)
+  * [Layout](css.md#layout)
+  * [Commenting](css.md#comments)
+  * [SASS Functions](css.md#sass-functions)
 * Framework
 * Grids
 * Media Queries
@@ -167,3 +167,9 @@ When nesting our CSS it is important that we only nest what is relevant to a cla
 #### Imports
 
 Earlier we looked at creating our import files, once we have added our CSS styling to the file we can go about including these styles within our main stylesheet. To import a file into the main sheet we simple add this line of code `@import "folder-name/file-name";`.
+
+#### Layout
+
+#### Comments
+
+#### SASS Functions
