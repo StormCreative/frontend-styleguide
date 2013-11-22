@@ -48,15 +48,14 @@ Now that the sass setup is complete, the folder structure needs to be completed 
 
 It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder called styles. Another folder is added inside this, which is called sass. This will store all the sass stylesheets being used for that particular project. Note: All folder names are to be in lowercase.
 
-* assets
-	* styles
-		* sass
-      * configurations
-      * components
-      * elements
-      * fonts
-      * framework
-      * mixins
+* styles
+	* sass
+    * configurations
+    * components
+    * elements
+    * fonts
+    * framework
+    * mixins
 
 Extra folders have been added within our sass folder, within these folders we would store relevant files that we can [import](css.md#imports) into our main stylesheets. 
 
