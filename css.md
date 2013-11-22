@@ -50,7 +50,7 @@ It is important that we have a home for our code so as developers we know where 
 
 * styles
 	* sass
-    * configurations
+      * configurations
     * components
     * elements
     * fonts
