@@ -170,6 +170,8 @@ Earlier we looked at creating our import files, once we have added our CSS styli
 
 #### Layout
 
+Heights shouldn't be be applied to elements. Heights should only be applied to things which have dimensions preset such as: images and sprites. If you need to set a height on an element use line-height which is far more flexible.
+
 #### Comments
 
 You should document and comment code as much as you possibly can, what may seem or feel transparent and self explanatory to you may not be to other developers. Once you have written a block of code explain what you have just done. This will help when look at your code at a later date but more importantly works with the document styler we use called [StyleDocco](http://jacobrask.github.io/styledocco/). StyleDocco will generate a document of our commented elements so we can see them and know what styles / classes to use. To use StyleDocco make sure that the gem is already installed and run the rake command `rake styleguide`.
