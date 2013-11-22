@@ -267,6 +267,7 @@ Heres a list of sass functions that we use and what they do.
 * `&:` - used when need to add to a class eg: `&:before` this will add the pseudo onto the class we are in
 * `$` - used to declare a variable eg: `$site-width`
 * `@include` - used to include a mixin within our selector (class)
+* `lighten()` `darken()` - used to lighten or darken a colour by a given percentage
 
 Mixins
 
