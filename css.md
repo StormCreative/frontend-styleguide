@@ -12,8 +12,8 @@ What this document will cover:
 * [Setting up files](css.md#file-naming)
 * [CSS Structure](css.md#css-structure)
   * [Class names](css.md#class-names)
-  * js-hooks
   * BEM
+  * js-hooks
   * Imports
   * Layout
   * Format
@@ -96,5 +96,19 @@ Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 cla
   .class_name {} // Not good
   .class-name {} // Good
   .class {} // Good
+```
+
+#### BEM
+
+A front-end methodology that we use is a CSS naming convention called BEM (Block Element Modifier).
+
+#### js-hooks
+
+If we are applying javascript to a class then we apply a js-hook to the name. This is to let us know that the element is using javascript and IS NOT TO BE USED as a CSS name to style. If we need to apply styling to that element this is when we can apply an additional class for styling purposes. eg:
+
+```html
+
+  <div class="js-dropdown dropdown"></div>
 
 ```
+
