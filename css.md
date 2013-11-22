@@ -18,6 +18,7 @@ What this document will cover:
   * Imports
   * Layout
   * Commenting
+  * SASS Functions
 * Framework
 * Grids
 * Media Queries
@@ -80,7 +81,7 @@ When naming our files, if they are a going to be used to produce a CSS file they
 ---
 ### CSS Structure
 
-When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourselves to remember (what the code actually does), but also for other programmers to follow as they might need to use the code at a later date. When writing our our CSS it is essential we don’t duplicate code! At times there will be incidents where we might need to adapt the styling of a class but we will only edit the specific styles and not copy over all the code. If we are using the same elements styling across multiple pages put the code within an import and call it in to the relevant stylesheet(s). This will help prevent duplication of code and can be edited within one place, makes everything generic and will speed up time.
+When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourselves to remember (what the code actually does), but also for other programmers to follow as they might need to use the code at a later date. When writing our our CSS it is essential we don’t duplicate code! At times there will be incidents where we might need to adapt the styling of a class but we will only edit the specific styles and not copy over all the code. If we are using the same elements styling across multiple pages put the code within an import and call it in to the relevant stylesheet(s). This will help prevent duplication of code and can be edited within one place, makes everything generic and will speed up time. Remember that CSS stands for Cascading Style Sheet which means that the styles lower down the sheet would overwrite the same styles at the top so its important to make sure that we put the styles in the correct order and that we are not repeating ourselves otherwise some styles if in the page twice would be overwritten and show as duplicated code.
 
 #### Class names
 
@@ -128,6 +129,7 @@ An example of good code markup:
 
 ```scss
 
+
     .services {
         background: #FFF; // use short-hand (wherever possible)
         border: 1px solid #000;
@@ -135,7 +137,7 @@ An example of good code markup:
         margin: 0;
         padding: 0.5em; // use em measurement = 8px
 
-        // CSS3 features are kept seperate and have the comment of CSS3 to let us know
+        // CSS3 features are kept separate and have the comment of CSS3 to let us know
         -webkit-border-radius: 0.25em; // use em measurement = 8px
            -moz-border-radius: 0.25em; // use em measurement = 8px
                 border-radius: 0.25em; // use em measurement = 8px
@@ -150,3 +152,8 @@ An example of good code markup:
     }
 
 ```
+
+When nesting our CSS it is important that we only nest what is relevant to a class. If a style (class) is used again across the site but not directly within a class then we shouldn't nest this as every level deeper we go the styling becomes more specific.
+
+#### Imports
+
