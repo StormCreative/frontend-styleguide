@@ -91,6 +91,7 @@ Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 cla
 
 ```scss
 
+
   .className {} // Not good
   .CLASSNAME {} // Not good
   .class_name {} // Not good
@@ -107,6 +108,7 @@ A front-end methodology that we use is a CSS naming convention called BEM (Block
 If we are applying javascript to a class then we apply a js-hook to the name. This is to let us know that the element is using javascript and IS NOT TO BE USED as a CSS name to style. If we need to apply styling to that element this is when we can apply an additional class for styling purposes. eg:
 
 ```html
+
 
   <div class="js-dropdown dropdown"></div>
 
