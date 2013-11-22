@@ -170,7 +170,7 @@ Earlier we looked at creating our import files, once we have added our CSS styli
 
 #### Layout
 
-Heights shouldn't be be applied to elements. Heights should only be applied to things which have dimensions preset such as: images and sprites. If you need to set a height on an element use line-height which is far more flexible.
+Heights and widths shouldn't be be applied to elements. Heights and widths should only be applied to things which have dimensions preset such as: images and sprites. If you need to set a height on an element use line-height which is far more flexible. The only time should be need to apply a width should be onto our grids system. The styles on the grid classes shouldn't be altered and should only have the widths on them, if we need to style that element add another class and apply the styling onto that.
 
 #### Comments
 
@@ -263,5 +263,4 @@ Don’t Repeat Yourself. Nobody wants to be writing the same code over again or 
 #### SASS Functions
 
 ### Framework
-### Grids
 ### Media Queries
