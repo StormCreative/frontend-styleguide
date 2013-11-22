@@ -10,12 +10,17 @@ What this document will cover:
 * [Initial Setup - SASS](css.md#initial-setup)
 * [Folder Setup](css.md#folder-setup)
 * [Setting up files](css.md#file-naming)
-* Imports
-* CSS structure / Layout / Format / Nesting / Indentation
-* Class names / js-hooks
-* BEM
-* StyleDocco
-* Commenting
+* [CSS Structure](css.md#css-structure)
+  * [Class names](css.md#class-names)
+  * js-hooks
+  * BEM
+  * Imports
+  * Layout
+  * Format
+  * Nesting
+  * Indentation
+  * StyleDocco
+  * Commenting
 * Framework
 * Grids
 * Media Queries
@@ -39,7 +44,7 @@ Once SASS is installed, create a file in the main directory called sass.sh and i
   </code>
 </pre>
 
-Comment out the sass watch that we don't want to use. In the example the css generated will be un-minified, if we commented this out and uncommented the compressed version then when we run sass in the command line with this line of code it will compress the css and make it minified.
+Comment out the sass watch that we don't want to use. In the example the CSS generated will be un-minified, if we commented this out and uncommented the compressed version then when we run sass in the command line with this line of code it will compress the CSS and make it minified.
 
 Now that the sass setup is complete, the folder structure needs to be completed to get our sass up and running.
 
@@ -68,20 +73,28 @@ Now the main styles folder structure is set up open the command line (terminal) 
   </code>
 </pre>
 
-This then starts running sass from our command line and any changes made in the sass files / folders updates in the css folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line: `sh sass.sh`
+This then starts running sass from our command line and any changes made in the sass files / folders updates in the CSS folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line: `sh sass.sh`
 
 ---
 ### File naming
 
-When it comes to creating the files for our stylesheets we have to make sure we use the right naming conventions in order for SASS to run correctly. If we are creating a main stylesheet that will hold all styles and be used within the HTML of our site we would give the file a relevant name such as 'styles' with the extension of .scss and add create this within the sass main folder.
+When naming our files, if they are a going to be used to produce a CSS file they are named with the extension .scss within the sass folder. This will generate a .css file in our styles folder for which our HTML can read. When naming this file make sure it is relevant to what it will be used for, so if its for our home.php name the file as home.scss as we know that it is used for styles on the homepage. If we need to break up a word for a file use hyphens not underscores eg: sub-page.scss and not sub_page.scss. Only use the underscores for when we are creating an import file within a certain folder, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a sheet, its used to import styles to the relevant stylesheet instead).
 
-* sass
-  * folder
-  * styles.scss
+---
+### CSS Structure
 
-And this will generate our css file within the styles folder so would look like this.
+When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourselves to remember (what the code actually does), but also for other programmers to follow as they might need to use the code at a later date. When writing our our CSS it is essential we don’t duplicate code! At times there will be incidents where we might need to adapt the styling of a class but we will only edit the specific styles and not copy over all the code. If we are using the same elements styling across multiple pages put the code within an import and call it in to the relevant stylesheet(s). This will help prevent duplication of code and can be edited within one place, makes everything generic and will speed up time.
 
-* sass
-  * folder
-  * styles.scss
-* styles.css
+#### Class names
+
+Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements. Try to only apply just ONE class to an element and not multiple classes, only in certain scenarios should we do this and will be explained later. When naming a class, think could this class be used again in the website? Don't be too specific to an element unless you know its not going to be reused. Examples of class names are shown below:
+
+```scss
+
+  .className {} // Not good
+  .CLASSNAME {} // Not good
+  .class_name {} // Not good
+  .class-name {} // Good
+  .class {} // Good
+
+```
