@@ -51,11 +51,11 @@ It is important that we have a home for our code so as developers we know where 
 * styles
 	* sass
       * configurations
-    * components
-    * elements
-    * fonts
-    * framework
-    * mixins
+      * components
+      * elements
+      * fonts
+      * framework
+      * mixins
 
 Extra folders have been added within our sass folder, within these folders we would store relevant files that we can [import](css.md#imports) into our main stylesheets. 
 
