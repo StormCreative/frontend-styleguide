@@ -262,5 +262,18 @@ Don’t Repeat Yourself. Nobody wants to be writing the same code over again or 
 
 #### SASS Functions
 
+Heres a list of sass functions that we use and what they do.
+
+* `&:` - used when need to add to a class eg: `&:before` this will add the pseudo onto the class we are in
+* `$` - used to declare a variable eg: `$site-width`
+* `@include` - used to include a mixin within our selector (class)
+
+Mixins
+
+---
 ### Framework
+
+To be added with Pegisis and Curtiss
+
+---
 ### Media Queries
