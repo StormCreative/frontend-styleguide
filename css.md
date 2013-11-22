@@ -51,10 +51,10 @@ It is important that we have a home for our code so as developers we know where 
 * assets
 	* styles
 		* sass
-			* configurations
+      * configurations
       * components
       * elements
-     	* fonts
+      * fonts
       * framework
       * mixins
 
@@ -83,12 +83,12 @@ When it comes to creating the files for our stylesheets we have to make sure we 
 
 * sass
   * folder
-  - styles.scss
+  * styles.scss
 
 And this will generate our css file within the styles folder so would look like this.
 
 * sass
   * folder
-  - styles.scss
-styles.css
+  * styles.scss
+* styles.css
 
