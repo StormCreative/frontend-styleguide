@@ -187,6 +187,7 @@ You should document and comment code as much as you possibly can, what may seem 
     Within this stylesheet you will find styles for:
 
     - SERVICES
+    - LIST OF OTHER CSS CLASSES / ELEMENTS
 
     Here we will copy over the relevant HTML that we used to apply our styles to, making sure that it is correctly indented.
 
@@ -209,6 +210,53 @@ You should document and comment code as much as you possibly can, what may seem 
 ```
 
 #### Dry
+
+Don’t Repeat Yourself. Nobody wants to be writing the same code over again or duplicating their code, so the best way is to not repeat yourself, once you have written your styling properties think how can I simplify this more? Are two things doing the same? Heres an example of coupling up styles to eliminate this problem:
+
+```scss
+    
+
+    // Both our classes use these properties so we couple them up by displaying them one under the other
+    // NOT INLINE and separated with a comma.
+    .services,
+    .products {
+        background: #ED1B24;
+
+        .services__list,
+        .products__list {
+            font-family: 'Arial';
+            font-size: 1em; // 16px
+            letter-spacing: -0.32em; // remove our margin on the li's so we can display them inline block and have a true margin
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                letter-spacing: normal;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    // Services styling
+    .services {
+        padding: 1em; // 16px
+
+        .services__list {
+            color: #FFF;
+        }
+    }
+
+    // Products styling
+    .products {
+        padding: 0.5em 1em; // 8px 16px
+
+        .products__list {
+            color: #333;
+        }
+    }
+
+```
 
 #### SASS Functions
 
