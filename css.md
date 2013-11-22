@@ -209,7 +209,7 @@ You should document and comment code as much as you possibly can, what may seem 
 
 ```
 
-#### Dry
+#### DRY
 
 Don’t Repeat Yourself. Nobody wants to be writing the same code over again or duplicating their code, so the best way is to not repeat yourself, once you have written your styling properties think how can I simplify this more? Are two things doing the same? Heres an example of coupling up styles to eliminate this problem:
 
