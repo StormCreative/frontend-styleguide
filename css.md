@@ -128,25 +128,25 @@ An example of good code markup:
 
 ```scss
 
-  .services {
-    background: #FFF; // use short-hand (wherever possible)
-    border: 1px solid #000;
-    list-style: none;
-    margin: 0;
-    padding: 0.5em; // use em measurement = 8px
+    .services {
+        background: #FFF; // use short-hand (wherever possible)
+        border: 1px solid #000;
+        list-style: none;
+        margin: 0;
+        padding: 0.5em; // use em measurement = 8px
 
-    // CSS3 features are kept seperate and have the comment of CSS3 to let us know
-    -webkit-border-radius: 0.25em; // use em measurement = 8px
-       -moz-border-radius: 0.25em; // use em measurement = 8px
-            border-radius: 0.25em; // use em measurement = 8px
+        // CSS3 features are kept seperate and have the comment of CSS3 to let us know
+        -webkit-border-radius: 0.25em; // use em measurement = 8px
+           -moz-border-radius: 0.25em; // use em measurement = 8px
+                border-radius: 0.25em; // use em measurement = 8px
 
-    .services__list {
-      color: #ED1B24;
-      display: inline-block;
-      font-family: 'Arial';
-      font-size: 1em; // use em measurement
-      padding: 0.5em 0.25em; // use em measurement and use short-hand = 8px (top,bottom) and 4px (left,right) */
+        .services__list {
+          color: #ED1B24;
+          display: inline-block;
+          font-family: 'Arial';
+          font-size: 1em; // use em measurement
+          padding: 0.5em 0.25em; // use em measurement and use short-hand = 8px (top,bottom) and 4px (left,right)
+        }
     }
-  }
 
 ```
