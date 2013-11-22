@@ -68,7 +68,7 @@ Now the main styles folder structure is set up open the command line (terminal) 
   </code>
 </pre>
 
-This then starts running sass from our command line and any changes made in the sass files / folders updates in the css folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line: ’sh sass.sh’
+This then starts running sass from our command line and any changes made in the sass files / folders updates in the css folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line: `sh sass.sh`
 
 ---
 ### File naming
