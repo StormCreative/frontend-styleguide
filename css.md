@@ -7,7 +7,7 @@ Consistency is key, a common formatting must be followed at all times. This is a
 ---
 What this document will cover:
 
-* [a relative link](css.md#initial-setup)Initial Setup - SASS
+* [Initial Setup - SASS](css.md#initial-setup)
 * Folder Structures
 * Setting up files
 * Imports
