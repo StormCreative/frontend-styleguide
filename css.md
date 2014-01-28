@@ -12,18 +12,17 @@ What this document will cover:
 * [Initial Setup - SASS](css.md#initial-setup)
 * [Folder Setup](css.md#folder-setup)
 * [Setting up files](css.md#file-naming)
+  * [Imports](css.md#imports)
 * [CSS Structure](css.md#css-structure)
   * [Class names](css.md#class-names)
   * [BEM](css.md#bem)
   * [js-hooks](css.md#js-hooks)
   * [Format](css.md#format)
-  * [Imports](css.md#imports)
   * [Layout](css.md#layout)
   * [Commenting](css.md#comments)
   * [SASS Functions](css.md#sass-functions)
-* Framework
-* Media Queries
 * Pegisis Framework
+* Media Queries
 
 ---
 ### Initial setup
@@ -77,12 +76,18 @@ Now the main styles folder structure is set up open the command line (terminal) 
 
 We would use the compressed watch version as we want to compress our CSS from the beginning. The code is telling SASS to watch for any changes in our styles within the assets/styles/sass files and then update our .css files within the assets/styles folder (the same as the folder structure we have just created). We only need to add this code the first time when we start the project, then after we can simply run SASS using the following line of code in the command line: `sh sass.sh`.
 
-###### Note: if using the [Pegisis framework](css.md#pegisis) we only need to run `sh sass.sh` as the initial setup of SASS is complete as well as our folder structure.
+###### Note: if using the [Pegisis framework](css.md#pegisis-framework) we only need to run `sh sass.sh` as the initial setup of SASS is complete as well as our folder structure.
 
 ---
 ### File naming
 
-When naming our files, if they are a going to be used to produce a CSS file they are named with the extension .scss within the sass folder. This will generate a .css file in our styles folder for which our HTML can read. When naming this file make sure it is relevant to what it will be used for, so if its for our home.php name the file as home.scss as we know that it is used for styles on the homepage. If we need to break up a word for a file use hyphens not underscores eg: sub-page.scss and not sub_page.scss. Only use the underscores for when we are creating an import file within a certain folder, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a sheet, its used to import styles to the relevant stylesheet instead).
+When naming our files, IF they are a going to be used to produce a CSS file they are named with the extension .scss within the sass folder. This will generate a .css file in our styles folder for which our HTML can read. eg: `layout.scss` will generate via the SASS watch to be `layout.css` within our styles folder and this is the stylesheet we would use for the browser to read the styling. When naming this file make sure it is named relevantly to what it will be used for, so if its for our home.php page name the file as home.scss as we know that it is used for styles on the homepage. If we need to break up a word for a file use hyphens not underscores eg: `sub-page.scss` and not `sub_page.scss`. Ideally we will only want to use one stylesheet and then add specific styles to pages via the components folder. Only use the underscores to name files when we are creating an import file within a certain folder like components, and save the file as _filename.scss so it does not generate a new stylesheet (this is not going to be a stylesheet .css file, its used to import styles to the relevant stylesheet instead).
+
+#### Imports
+
+An import must have the extension _filename.scss and be stored within one of our SASS folders. An import is used to include many SASS files into other files. We will mainly import all styles into a _structure.scss file where all the styling for our project will be held. 
+
+To import a file into the other SASS files we simple add this line of code `@import "folder-name/file-name";`.
 
 ---
 ### CSS Structure
@@ -169,10 +174,6 @@ An example of good code markup:
 ```
 
 When nesting our CSS it is important that we only nest what is relevant to a class. If a style (class) is used again across the site but not directly within a class then we shouldn't nest this as every level deeper we go the styling becomes more specific.
-
-#### Imports
-
-Earlier we looked at creating our import files, once we have added our CSS styling to the file we can go about including these styles within our main stylesheet. To import a file into the main sheet we simple add this line of code `@import "folder-name/file-name";`.
 
 #### Layout
 
@@ -276,7 +277,7 @@ Heres a list of sass functions that we use and what they do.
 * `lighten()` `darken()` - used to lighten or darken a colour by a given percentage
 
 ---
-### Framework
+### Pegisis Framework
 
 To be added with Pegisis and Curtiss
 
@@ -292,6 +293,3 @@ To be added with Pegisis and Curtiss
 - Prefixes
 - Opacity
 - Font size
-
----
-### Pegisis
