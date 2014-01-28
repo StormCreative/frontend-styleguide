@@ -85,14 +85,16 @@ When naming our files, IF they are a going to be used to produce a CSS file they
 
 #### Imports
 
-An import must have the extension _filename.scss and be stored within one of our SASS folders. An import is used to include many SASS files into other files. We will mainly import all styles into a _structure.scss file where all the styling for our project will be held. 
+An import must have the extension _filename.scss and be stored within one of our SASS folders. An import is used to include many SASS files into other files. We will mainly import all styles into a `_structure.scss` file where all the styling for our project will be held. 
 
-To import a file into the other SASS files we simple add this line of code `@import "folder-name/file-name";`.
+To import a file into the other SASS files we simple add this line of code `@import "folder-name/file-name";`. Remember to add the import you just created into the structure file otherwise you will not see any styles appearing when you go to check within the browser.
+
+The `_stucture.scss` file will then be imported into our main stylesheet(s) using the same process and will output all our styles in a CSS format that browsers can read.
 
 ---
 ### CSS Structure
 
-When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourselves to remember (what the code actually does), but also for other programmers to follow as they might need to use the code at a later date. When writing our our CSS it is essential we don’t duplicate code! At times there will be incidents where we might need to adapt the styling of a class but we will only edit the specific styles and not copy over all the code. If we are using the same elements styling across multiple pages put the code within an import and call it in to the relevant stylesheet(s). This will help prevent duplication of code and can be edited within one place, makes everything generic and will speed up time. Remember that CSS stands for Cascading Style Sheet which means that the styles lower down the sheet would overwrite the same styles at the top so its important to make sure that we put the styles in the correct order and that we are not repeating ourselves otherwise some styles if in the page twice would be overwritten and show as duplicated code.
+When writing out our CSS code it is essential that we make our code clean, using correct standard documentation, which is also informative for not only ourselves to remember (what the code actually does), but also for other programmers to follow as they might need to use the code at a later date. When writing out our CSS it is essential we don't duplicate code! At times there will be incidents where we might need to adapt the styling of a class but we will only edit the specific styles and not copy over all the code. If we are using the same elements styling across multiple pages put the code within an import and call it in to the relevant stylesheet(s). This will help prevent duplication of code and can be edited within one place, makes everything generic and will speed up development time. Remember that CSS stands for Cascading Style Sheet which means that the styles lower down the sheet would overwrite the same styles at the top so its important to make sure that we put the styles in the correct order and that we are not repeating ourselves otherwise some styles (if in the page twice) would be overwritten and show as duplicated code.
 
 #### Class names
 
@@ -142,7 +144,7 @@ Part and parcel of programming is producing clean, and well presented code which
 * Provide a space between a property and a value. (color: #FFF;)
 * Keep properties in alphabetical order (preferable) - helps identify quicker
 * Ensure prefixes line up
-* Nesting code - NO MORE THAN 3 LEVELS DEEP
+* Nesting code - NO MORE THAN 3 LEVELS DEEP and nest if no class name is added, or is specific to what you are styling
 * Not written in one line blocks
 
 An example of good code markup:
@@ -161,14 +163,14 @@ An example of good code markup:
         -webkit-border-radius: 0.25em; // use em measurement = 8px
            -moz-border-radius: 0.25em; // use em measurement = 8px
                 border-radius: 0.25em; // use em measurement = 8px
+    }
 
-        .services__list {
-          color: #ED1B24;
-          display: inline-block;
-          font-family: 'Arial';
-          font-size: 1em; // use em measurement
-          padding: 0.5em 0.25em; // use em measurement and use short-hand = 8px (top,bottom) and 4px (left,right)
-        }
+    .services__list {
+        color: #ED1B24;
+        display: inline-block;
+        font-family: 'Arial';
+        font-size: 1em; // use em measurement
+        padding: 0.5em 0.25em; // use em measurement and use short-hand = 8px (top,bottom) and 4px (left,right)
     }
 
 ```
@@ -285,8 +287,7 @@ To be added with Pegisis and Curtiss
 
 #### Grid
 
----
-### Mixins
+#### Mixins
 
 - Retina
 - Image replace
