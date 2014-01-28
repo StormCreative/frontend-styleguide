@@ -1,4 +1,6 @@
-## Storm Creative Media CSS Styleguide - Version 1.0
+## Storm Creative Media CSS Styleguide - Version 1.1
+
+Last updated: 27/01/2014
 
 To keep code tidy, maintainable and a little less ugly we need to adhere to a unified Styleguide across the team. This document will cover the techniques and preferred practise by the Storm Creative development team.
 
@@ -20,7 +22,6 @@ What this document will cover:
   * [Commenting](css.md#comments)
   * [SASS Functions](css.md#sass-functions)
 * Framework
-* Grids
 * Media Queries
 
 ---
@@ -34,44 +35,48 @@ Once SASS is installed, create a file in the main directory called sass.sh and i
   <code>
     #!/bin/sh
 
-    sass --style expanded --watch assets/styles/sass:assets/styles --debug-info
-    #sass --style compressed --watch assets/styles/sass:assets/styles
+    #sass --style expanded --watch assets/styles/sass:assets/styles --debug-info
+    sass --style compressed --watch assets/styles/sass:assets/styles
 
     exit 0
 
   </code>
 </pre>
 
-Comment out the sass watch that we don't want to use. In the example the CSS generated will be un-minified, if we commented this out and uncommented the compressed version then when we run sass in the command line with this line of code it will compress the CSS and make it minified.
+We comment out the sass watch that we don't want to use by displaying a hashtag `#` before it.
 
-Now that the sass setup is complete, the folder structure needs to be completed to get our sass up and running.
+Our SASS setup is now complete, next the folder structure needs to be completed to get our SASS up and running.
 
 ---
 ### Folder setup
 
-It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder called styles. Another folder is added inside this, which is called sass. This will store all the sass stylesheets being used for that particular project. Note: All folder names are to be in lowercase.
+It is important that we have a home for our code so as developers we know where we can access it at any given time. All stylesheets are stored within the assets folder of our directory under a subfolder called styles. Another folder is added inside this, which is called sass. This will store all the sass stylesheets being used for that particular project. We must make sure that our folder setup matches that of our SASS command setup.
+
+Note: All folder names are to be in lowercase.
 
 * assets
   * styles
   	* sass
-        * configurations
         * components
+        * config
         * elements
         * fonts
         * framework
         * mixins
 
-Extra folders have been added within our sass folder, within these folders we would store relevant files that we can [import](css.md#imports) into our main stylesheets. 
+Extra folders have been added within our sass folder, within these folders we would store relevant files that we can [import](css.md#imports) into our main stylesheets. Examples would be our navigation, headers and footer within our components folder.
 
 Now the main styles folder structure is set up open the command line (terminal) and access the directory for the project and run the following code:
 
 <pre>
   <code>
-    sass --style expanded --watch assets/styles/sass:assets/styles
+    sass --style compressed --watch assets/styles/sass:assets/styles
   </code>
 </pre>
 
-This then starts running sass from our command line and any changes made in the sass files / folders updates in the CSS folder. We only need to add this code the first time when we start the project, then after we can simply run the following line of code in the command line: `sh sass.sh`
+We would use the compressed watch version as we want to compress our CSS from the beginning. The code is telling SASS to watch for any changes in our styles within the assets/styles/sass files and then update our .css files within the assets/styles folder (the same as the folder structure we have just created). We only need to add this code the first time when we start the project, then after we can simply run SASS using the following line of code in the command line: `sh sass.sh`.
+
+#### Note: if using the <b>Pegisis</b> framework we only need to run `sh sass.sh` as the initial setup of SASS is complete as well as our folder structure.
 
 ---
 ### File naming
@@ -269,20 +274,20 @@ Heres a list of sass functions that we use and what they do.
 * `@include` - used to include a mixin within our selector (class)
 * `lighten()` `darken()` - used to lighten or darken a colour by a given percentage
 
-Mixins
-
-- Retina
-- Image replace
-- Media Queries
-- Grid
-- Prefixes
-- Opacity
-- Font size
-
 ---
 ### Framework
 
 To be added with Pegisis and Curtiss
 
+#### Media Queries
+
+#### Grid
+
 ---
-### Media Queries
+### Mixins
+
+- Retina
+- Image replace
+- Prefixes
+- Opacity
+- Font size
