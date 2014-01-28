@@ -1,6 +1,6 @@
 ## Storm Creative Media CSS Styleguide - Version 1.1
 
-Last updated: 27/01/2014
+Last updated: 28/01/2014
 
 To keep code tidy, maintainable and a little less ugly we need to adhere to a unified Styleguide across the team. This document will cover the techniques and preferred practise by the Storm Creative development team.
 
@@ -23,6 +23,7 @@ What this document will cover:
   * [SASS Functions](css.md#sass-functions)
 * Framework
 * Media Queries
+* Pegisis Framework
 
 ---
 ### Initial setup
@@ -76,7 +77,7 @@ Now the main styles folder structure is set up open the command line (terminal) 
 
 We would use the compressed watch version as we want to compress our CSS from the beginning. The code is telling SASS to watch for any changes in our styles within the assets/styles/sass files and then update our .css files within the assets/styles folder (the same as the folder structure we have just created). We only need to add this code the first time when we start the project, then after we can simply run SASS using the following line of code in the command line: `sh sass.sh`.
 
-#### Note: if using the <b>Pegisis</b> framework we only need to run `sh sass.sh` as the initial setup of SASS is complete as well as our folder structure.
+###### Note: if using the [Pegisis framework](css.md#pegisis) we only need to run `sh sass.sh` as the initial setup of SASS is complete as well as our folder structure.
 
 ---
 ### File naming
@@ -291,3 +292,6 @@ To be added with Pegisis and Curtiss
 - Prefixes
 - Opacity
 - Font size
+
+---
+### Pegisis
