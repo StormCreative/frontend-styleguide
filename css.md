@@ -347,6 +347,32 @@ Some things in CSS are a bit tedious to write, especially with CSS3 and the many
 
 ##### *Media Queries*
 
+Responsive design is becoming more a part of the team projects so a media queries mixin was created which will target devices 568px or below showing mobile designs and anything greater will show desktop styling. To help improve this speed development, be easier to use and work with ie8! this mixin ticks all the boxes.
+
+To make the mixin work we have to import it first into the `_structure.scss` file make sure that the variable in our config/settings `$MQs` is set to true and that a stylesheet called nomqs.scss is created with the main stylesheet of `layout` imported into this and our variable `$MQs` is at the top with the value set to false. We need to do this so that ie8 will read this stylesheet as normal content and this will then work for desktop as they don't read media queries.
+
+The media query mixin is now nearly ready to use but we need to check one more thing before it can be used. We need to navigate to our core folder within Pegisis, and then open up the settings folder and then site.php. We have to make sure that we set the question marks `$settings[ 'MEDIA_QUERIES' ] = ????;` to TRUE.
+
+The mixin is all setup and ready to use. To use this we need to include it within a class after we have entered all our styling for the mobile design. As when we build mobile-first we make sure all the mobile styles are done first and then enter our desktop styling after using the mixin `@include bp(desktop)` like so:
+
+```scss
+
+  .nav {
+      background: #FFF;
+      color: #000;
+      padding: 0.5em;
+
+      // Add our desktop styling for devices 569px >
+      @include bp(desktop) {
+          background: #CCC; // This will overwrite our mobile background colour for devices 569px or greater, but lower will keep the previous colour
+          text-align: center; // The text will only align center on desktop versions
+      }
+  }
+
+```
+
+Please note: To NOT use media queries within a site that isn't responsive then turn all the variables mentioned above to false.
+
 ##### *Image replacement*
 
 ##### *Sprites*
