@@ -285,14 +285,50 @@ Heres a list of sass functions that we use within our styling and what they do.
 
 The Pegisis Framework is the base for all Storm projects. Once you have setup Pegisis into a project if you navigate to the styles folder you will find the CSS / SASS setup has already been completed along with some handy, mixins, variables and structure setup. This section will cover everything held within this CSS Framework. 
 
-#### Media Queries
+#### Structure
 
-#### Grid
+The folder structure used within the framework breaks up all our .scss files into relevant areas which will then be imported into our main file of structure. Examples of the folders used are shown below with the folder names as the headings with the relevant information / elements that should be included to which folder.
 
-#### Mixins
+##### Components
 
-- Retina
-- Image replace
-- Prefixes
-- Opacity
-- Font size
+The components folder is used to store all sections across the site that are used within our includes or could be sections of the site that are unique, used across multiple pages or an actual page. Typically the standard imports that will go into the components folder would be: navigation, header, aside, footer. We would then build on this and include imports such as carousels, galleries, login areas, dashboards etc. If we need to have a unique page such as a contact page this could also be added in here.
+
+##### Config
+
+Variables and Settings are the two files that are used within the Config folder. The Settings file shouldn't really be touched as this has all the style setup for the framework which includes the setup of image paths, sprites, media queries and grids. This file should only be touched if you need to turn media queries or grid off and not use them within a project. The other file variables however, is where all the sites shortcuts are entered and changed. Variables are used to help speed up development as we can assign values to them and can be used as a properties values. eg: `$brand-colour: #000;` can be used within a selector (class) like so:
+
+```scss
+
+
+    .nav {
+      background: $brand-colour;
+    }
+    
+    // Will display as
+    .nav {
+      background: #000;
+    }
+
+```
+
+By assigning variables we can use them multiple times wherever they might be used and can help not only speed up development as they are already assigned, but will help keep consistency across the site with colours, fonts, widths but also if a change needs to be made it will be made quicker as will change wherever the variable is used and saves hunting all the files to find where a styling value for a property has been used.
+
+##### Elements
+
+These are all the small parts of the site that help build up our components. The Elements folder is used primarily for buttons, forms, tables, tabs and error messages for example. Within each import we would relate all styles to the elements across the site in here. Eg: all buttons inside the _buttons.scss file with a breakup of comments of what each button is.
+
+##### Fonts
+
+##### Framework
+
+##### Mixins
+
+###### Media Queries
+
+###### Grid
+
+###### Sprites
+
+###### Retina
+
+###### Prefixes
