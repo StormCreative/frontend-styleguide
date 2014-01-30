@@ -335,12 +335,12 @@ These are all the small parts of the site that help build up our components. The
 ##### Mixins
 
 
-##### *Media Queries*
+    ##### *Media Queries*
 
-##### *Grid*
+    ##### *Grid*
 
-##### *Sprites*
+    ##### *Sprites*
 
-##### *Retina*
+    ##### *Retina*
 
-##### *Prefixes*
+    ##### *Prefixes*
