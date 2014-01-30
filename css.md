@@ -98,7 +98,7 @@ When writing out our CSS code it is essential that we make our code clean, using
 
 #### Class names
 
-Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements. Try to only apply just ONE class to an element and not multiple classes, only in certain scenarios should we do this and will be explained later. When naming a class, think could this class be used again in the website? Don't be too specific to an element unless you know its not going to be reused. Examples of class names are shown below:
+Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements. Try to only apply just ONE class to an element eg: `header` and all the styles for our headers will adopt the header styling. If we need to apply different backgrounds or adapt styling specifically to this header we can add another class into our HTML like so: `header header-service`. This is telling us that we are using our header class for header styles, and header-service is relating the page we are on, with specific styling for that header. This could be our different background-image for example. We try not to have too many multiple classes, and only in certain scenarios should we do this where we need to adapt styling like the example above. When naming our classes try to be as relevant as possible and follow the same naming conventions. eg: `intro-title, intro-copy, intro-image` not only are these relevant to our intro but it is telling us what each element is and can be used for every page that has an intro. When naming a class, think could this class be used again in the website? Don't be too specific to an element unless you know its not going to be reused. Examples of class names are shown below:
 
 ```scss
 
@@ -144,8 +144,9 @@ Part and parcel of programming is producing clean, and well presented code which
 * Provide a space between a property and a value. (color: #FFF;)
 * Keep properties in alphabetical order (preferable) - helps identify quicker
 * Ensure prefixes line up
-* Nesting code - NO MORE THAN 3 LEVELS DEEP and nest if no class name is added, or is specific to what you are styling
+* Nesting code - NO MORE THAN 3 LEVELS DEEP and nest if no class name is added, or is specific to what you are styling eg: (p tag within a class and we want to style those specific p tags)
 * Not written in one line blocks
+* Adding relevant class names and making sure if we need to target specific tags to nest them within the block class they are held
 
 An example of good code markup:
 
@@ -155,7 +156,7 @@ An example of good code markup:
     /************************************************
       
       SERVICES
-      --------
+      ========
 
       Create a comment area that can be used to
       separate different sections within the
