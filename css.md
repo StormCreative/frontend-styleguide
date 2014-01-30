@@ -21,7 +21,18 @@ What this document will cover:
   * [Commenting](css.md#comments)
   * [SASS Functions](css.md#sass-functions)
 * [Pegisis framework](css.md#pegisis-framework)
-  * Media Queries
+  * [Structure](css.md#structure)
+  * [Components](css.md#components)
+  * [Config](css.md#config)
+  * [Elements](css.md#elements)
+  * [Fonts](css.md#fonts)
+  * [Framework](css.md#framework)
+  * [Mixins](css.md#mixins)
+    * [Media Queries](css.md#media-queries)
+    * [Grid](css.md#grid)
+    * [Sprites](css.md#sprites)
+    * [Retina](css.md#retina)
+    * [Prefixes](css.md#prefixes)
 
 ---
 ### Initial setup
@@ -323,12 +334,14 @@ These are all the small parts of the site that help build up our components. The
 
 ##### Mixins
 
-###### Media Queries
+---
 
-###### Grid
+##### Media Queries
 
-###### Sprites
+##### Grid
 
-###### Retina
+##### Sprites
 
-###### Prefixes
+##### Retina
+
+##### Prefixes
