@@ -15,7 +15,6 @@ What this document will cover:
   * [Imports](css.md#imports)
 * [CSS Structure](css.md#css-structure)
   * [Class names](css.md#class-names)
-  * [BEM](css.md#bem)
   * [js-hooks](css.md#js-hooks)
   * [Format](css.md#format)
   * [Layout](css.md#layout)
