@@ -21,7 +21,7 @@ What this document will cover:
   * [Commenting](css.md#comments)
   * [SASS Functions](css.md#sass-functions)
 * [Pegisis framework](css.md#pegisis-framework)
-* Media Queries
+  * Media Queries
 
 ---
 ### Initial setup
@@ -273,17 +273,17 @@ Don't Repeat Yourself. Nobody wants to be writing the same code over again or du
 
 #### SASS Functions
 
-Heres a list of sass functions that we use and what they do.
+Heres a list of sass functions that we use within our styling and what they do.
 
-* `&:` - used when need to add to a class eg: `&:before` this will add the pseudo onto the class we are in
-* `$` - used to declare a variable eg: `$site-width`
-* `@include` - used to include a mixin within our selector (class)
-* `lighten()` `darken()` - used to lighten or darken a colour by a given percentage
+* `&:` - used when need to add to a class using pseudo elements, first-child or hovers eg: `&:before` this will add the pseudo onto the class we are in
+* `$` - used to declare a variable eg: `$site-width`, `$brand-colour`
+* `@include` - used to include a [mixin](ccs.md#mixins) within our selector (class)
+* `lighten()`, `darken()` - used to lighten or darken a colour by a given percentage eg: `color: darken(#ED1B24, 10%);`
 
 ---
 ### Pegisis Framework
 
-To be added with Pegisis and Curtiss
+The Pegisis Framework is the base for all Storm projects. Once you have setup Pegisis into a project if you navigate to the styles folder you will find the CSS / SASS setup has already been completed along with some handy, mixins, variables and structure setup. This section will cover everything held within this CSS Framework. 
 
 #### Media Queries
 
