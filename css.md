@@ -1,6 +1,6 @@
 ## Storm Creative Media CSS Styleguide - Version 1.1
 
-Last updated: 28/01/2014
+Last updated: 30/01/2014
 
 To keep code tidy, maintainable and a little less ugly we need to adhere to a unified Styleguide across the team. This document will cover the techniques and preferred practise by the Storm Creative development team.
 
@@ -150,8 +150,20 @@ Part and parcel of programming is producing clean, and well presented code which
 An example of good code markup:
 
 ```scss
+    
 
+    /************************************************
+      
+      SERVICES
+      --------
 
+      Create a comment area that can be used to
+      separate different sections within the
+      stylesheet. Within here also write a short
+      description of what is being included. 
+
+    *************************************************/
+    
     .services {
         background: #FFF; // use short-hand (wherever possible)
         border: 1px solid #000;
