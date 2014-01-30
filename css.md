@@ -21,7 +21,7 @@ What this document will cover:
   * [Layout](css.md#layout)
   * [Commenting](css.md#comments)
   * [SASS Functions](css.md#sass-functions)
-* Pegisis Framework
+*[Pegisis framework](css.md#pegisis-framework)
 * Media Queries
 
 ---
@@ -98,7 +98,7 @@ When writing out our CSS code it is essential that we make our code clean, using
 
 #### Class names
 
-Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements. Try to only apply just ONE class to an element eg: `header` and all the styles for our headers will adopt the header styling. If we need to apply different backgrounds or adapt styling specifically to this header we can add another class into our HTML like so: `header header-service`. This is telling us that we are using our header class for header styles, and header-service is relating the page we are on, with specific styling for that header. This could be our different background-image for example. We try not to have too many multiple classes, and only in certain scenarios should we do this where we need to adapt styling like the example above. When naming our classes try to be as relevant as possible and follow the same naming conventions. eg: `intro-title, intro-copy, intro-image` not only are these relevant to our intro but it is telling us what each element is and can be used for every page that has an intro. When naming a class, think could this class be used again in the website? Don't be too specific to an element unless you know its not going to be reused. Examples of class names are shown below:
+Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 classes to override one ID) so that we can give specific styling to elements. Try to only apply just ONE class to an element eg: `header` and all the styles for our headers will adopt the header styling. If we need to apply different backgrounds or adapt styling specifically to this header we can add another class into our HTML like so: `header header-service`. This is telling us that we are using our header class for header styles, and header-service is relating to the page we are on, with specific styling for that header. This could be our different background-image for example. We try not to have too many multiple classes, and only in certain scenarios should we do this. Where we need to adapt styling etc like the example above. When naming our classes try to be as relevant as possible and follow the same naming conventions. eg: `intro-title, intro-copy, intro-image` not only are these relevant to our intro but it is telling us what each element is and can be used for every page that has an intro. When naming a class, also think could this class be used again in the website? Don't be too specific to an element unless you know its not going to be reused. Examples of class names are shown below:
 
 ```scss
 
@@ -108,19 +108,6 @@ Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 cla
   .class_name {} // Not good
   .class-name {} // Good
   .class {} // Good
-
-```
-
-#### BEM
-
-A front-end methodology that we use is a CSS naming convention called BEM (Block Element Modifier). Explain more&hellip;
-
-```scss
-
-
-    .services {} // service Block
-    .services__list {} // service Elements
-    .services__list--websites {} // service Modifier
 
 ```
 
@@ -188,15 +175,15 @@ An example of good code markup:
 
 ```
 
-When nesting our CSS it is important that we only nest what is relevant to a class. If a style (class) is used again across the site but not directly within a class then we shouldn't nest this as every level deeper we go the styling becomes more specific.
+When nesting our CSS it is important that we only nest what is relevant to a class. If a style (class) is used again across the site but not directly within a class then we shouldn't nest this as every level deeper we go the styling becomes more specific and will effect speed time for the browser to read it.
 
 #### Layout
 
-Heights and widths shouldn't be be applied to elements. Heights and widths should only be applied to things which have dimensions preset such as: images and sprites. If you need to set a height on an element use line-height which is far more flexible. The only time should be need to apply a width should be onto our grids system. The styles on the grid classes shouldn't be altered and should only have the widths on them, if we need to style that element add another class and apply the styling onto that.
+Heights and widths shouldn't be be applied to elements. Heights and widths should only be applied for a dimensions preset such as: images, sprites and background images. If you need to set a height on an element use line-height which is far more flexible. The only time should we really need to apply a width should be onto our grids system. The styles on the grid classes shouldn't be altered and should only have the widths on them, if we need to style that element add another class and apply the styling onto that. The layout is also our main stylesheet which will have the structure imported into it and is the base for our website.
 
 #### Comments
 
-You should document and comment code as much as you possibly can, what may seem or feel transparent and self explanatory to you may not be to other developers. Once you have written a block of code explain what you have just done. This will help when look at your code at a later date but more importantly works with the document styler we use called [StyleDocco](http://jacobrask.github.io/styledocco/). StyleDocco will generate a document of our commented elements so we can see them and know what styles / classes to use. To use StyleDocco make sure that the gem is already installed and run the rake command `rake styleguide`.
+You should document and comment code as much as you possibly can, what may seem or feel transparent and self explanatory to you may not be to other developers. Once you have written a block of code explain what you have just done. This will help when looking at your code at a later date but more importantly works with the document styler we use called [StyleDocco](http://jacobrask.github.io/styledocco/). StyleDocco will generate a document of our commented elements in HTML and CSS so we can see them and know what styles / classes to use. To use StyleDocco make sure that the gem is already installed and run the rake command `rake styleguide` when using our [Pegisis framework](css.md#pegisis-framework).
 
 ```scss
 
@@ -235,7 +222,7 @@ You should document and comment code as much as you possibly can, what may seem 
 
 #### DRY
 
-Don’t Repeat Yourself. Nobody wants to be writing the same code over again or duplicating their code, so the best way is to not repeat yourself, once you have written your styling properties think how can I simplify this more? Are two things doing the same? Heres an example of coupling up styles to eliminate this problem:
+Don't Repeat Yourself. Nobody wants to be writing the same code over again or duplicating their code, so the best way is to not repeat yourself, once you have written your styling properties think how can I simplify this more? Are two things doing the same? Heres an example of coupling up styles to eliminate this problem:
 
 ```scss
     
@@ -245,39 +232,42 @@ Don’t Repeat Yourself. Nobody wants to be writing the same code over again or 
     .services,
     .products {
         background: #ED1B24;
-
-        .services__list,
-        .products__list {
-            font-family: 'Arial';
-            font-size: 1em; // 16px
-            letter-spacing: -0.32em; // remove our margin on the li's so we can display them inline block and have a true margin
-            list-style: none;
-            padding: 0;
-
-            li {
-                display: inline-block;
-                letter-spacing: normal;
-                vertical-align: middle;
-            }
-        }
     }
 
     // Services styling
     .services {
         padding: 1em; // 16px
-
-        .services__list {
-            color: #FFF;
-        }
     }
 
     // Products styling
     .products {
         padding: 0.5em 1em; // 8px 16px
+    }
 
-        .products__list {
-            color: #333;
+    // Services and products listings
+    .services__list,
+    .products__list {
+        font-family: 'Arial';
+        font-size: 1em; // 16px
+        letter-spacing: -0.32em; // remove our margin on the li's so we can display them inline block and have a true margin
+        list-style: none;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            letter-spacing: normal;
+            vertical-align: middle;
         }
+    }
+
+    // Services list styling
+    .services__list {
+        color: #FFF;
+    }
+
+    // Products list styling
+    .products__list {
+        color: #333;
     }
 
 ```
