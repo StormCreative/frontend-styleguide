@@ -27,9 +27,10 @@ What this document will cover:
   * [Elements](css.md#elements)
   * [Fonts](css.md#fonts)
   * [Framework](css.md#framework)
+    * [Grid](css.md#grid)
   * [Mixins](css.md#mixins)
     * [Media Queries](css.md#media-queries)
-    * [Grid](css.md#grid)
+    * [Image Replacement](css.md#image-replacement)
     * [Sprites](css.md#sprites)
     * [Retina](css.md#retina)
     * [Prefixes](css.md#prefixes)
@@ -330,17 +331,30 @@ These are all the small parts of the site that help build up our components. The
 
 ##### Fonts
 
+Display all the @font-face fonts styling and font-awesome files within this folder. Make sure that the files are imported into our `_structure.scss` file and at the top of this file as the fonts will need to be loaded in first and also be shown.
+
 ##### Framework
+
+This is the folder that will hold our structure file which all imports will be held. This file is then imported into our layout.scss file which is used by the browser to read all the styles. The other main file within here is `_grids.scss`.
+
+##### *Grid*
+
+Grids, used to help create a column structure to a website. The grid system we use is build in-house using other methods of grid compiled into one. 
 
 ##### Mixins
 
+Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. Below are descriptions of mixins that we currently use (made in-house) and what they do. To use a mixin we must make sure we use the command `@include mixin-name`.
 
-    ##### *Media Queries*
+##### *Media Queries*
 
-    ##### *Grid*
+##### *Image replacement*
 
-    ##### *Sprites*
+##### *Sprites*
 
-    ##### *Retina*
+To reduce file size and increase speed we use sprites which are a combination of all background images across the site in one main image / file. The main setup is to create a fireworks file for a normal sprite and a retina sprite. We save these in a folder held within our images folder called `_source` and saved as a fireworks .png file as `sprite` and `sprite@2x`. We can now import our background images into each file and make sure we leave at least a pixel spacing between each image and exporting them as `sprite.png` and `sprite_2x.png` (_2x tells us that this is our retina sprite image so we need to make sure its saved in our retina folder).
 
-    ##### *Prefixes*
+Now we have set up the structure for our sprite we need to now use the mixin created which will ask us to provide the co-ordinates of where our image we want to show is in relation to our sprite. We do this by running this line of code within the class we want to add the background image... `@include sprite(-x -y);` This will then pick up the co-ordinates for our image. We also need to make sure that within the variables file we change the width of that variable to the size of our sprite.png image file.
+
+##### *Retina*
+
+##### *Prefixes*
