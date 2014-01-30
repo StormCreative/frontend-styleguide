@@ -20,7 +20,7 @@ What this document will cover:
   * [Layout](css.md#layout)
   * [Commenting](css.md#comments)
   * [SASS Functions](css.md#sass-functions)
-*[Pegisis framework](css.md#pegisis-framework)
+* [Pegisis framework](css.md#pegisis-framework)
 * Media Queries
 
 ---
