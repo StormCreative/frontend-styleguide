@@ -449,4 +449,44 @@ Now we have set up the structure for our sprite we need to now use the mixin cre
 
 ##### *Retina*
 
+Retina display devices are becoming more apparent so when we look at our images on these devices they look a little pixelated and not as sharp as they should be. To do this we can either use the sprite for our background images as mentioned [above](css.md#sprites) or we can apply our retina mixin to a class (mainly for header backgrounds as they are not in our sprites) like so:
+
+```scss
+
+
+  .header {
+      background: url("../images/home-header.png") 0 0 no-repeat;
+
+      // The mixin being called in and need to make sure that we add background and background-size within the selector
+      @include retina {
+          background: url("../images/retina/home-header_2x.png") 0 0 no-repeat;
+          background-size: 100%;
+      }
+  }
+
+```
+
 ##### *Prefixes*
+
+One main shortcut that we use is the mixin for prefixes, a prefix are a way for browser makers to add support for new CSS features like so: `-webkit-` would apply styling to webkit browsers. They can only be applied to CSS3 features and the ones listed below are the ones we use and how to use them:
+
+```scss
+  
+  * {
+      @include box-sizing(border-box); // used as the start for every project as we want to apply margins and paddings within a block and not outside
+  }
+
+  .example {
+      // Apply rounded corners to our class
+      @include border-radius(0.5em);
+
+      // Apply box shadow to our class
+      @include box-shadow(5px 5px 5px #CCC);
+
+      // Apply a transition to our class
+      @include transition();
+  }
+
+```
+
+All the examples above are the main ones used across projects and will target all browsers.
