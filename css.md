@@ -339,7 +339,7 @@ This is the folder that will hold our structure file which all imports will be h
 
 ##### *Grid*
 
-Grids are used to help create a column structure to a website. The grid system we use is build in-house using other methods of grid and compiled into one. To use the mixin it must first be imported into the main `_structure.scss` file and within the `config/_settings.scss` the variable `$grid` should be set to true.
+Grids are used to help create a column structure to a website. The grid system we use is build in-house using other methods of grid and compiled into one. To use grids it must first be imported into the main `_structure.scss` file and within the `config/_settings.scss` the variable `$grid` should be set to true.
 
 Within the HTML the parent block must use a class of `grid` and its children (next elements within the block) have a class of `grid__????`. The question marks are the width that we want to set for our column. The class names with the values are show below:
 
@@ -401,6 +401,10 @@ Within the HTML the parent block must use a class of `grid` and its children (ne
 
 ```
 
+If the spacing between each column needs to be increased or made smaller then within the `config/_variables.scss` file change the variable value for `$grid-margin` to the spacing you require. 
+
+Please note that if you try to apply a grid class within a grid class it will not work correctly so use the grid to break up the site into sections for the widths and apply styling to any extra columns inside.
+
 ##### Mixins
 
 Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. Below are descriptions of mixins that we currently use (made in-house) and what they do. To use a mixin we must make sure we use the command `@include mixin-name`.
@@ -434,6 +438,8 @@ The mixin is all setup and ready to use. To use this we need to include it withi
 Please note: To NOT use media queries within a site that isn't responsive then change the values of all the variables mentioned above to false.
 
 ##### *Image replacement*
+
+If we need to create a link or have a logo or image which needs to have text for SEO purposes we can use image replacement to keep the text but replace it with the image / logo we require. This helps keep up to web standards but also have a visible link. To use this simply make sure all the dimensions for the image are within the class styling along with the background image you are using and include the mixin like this: `@include img-replace;`
 
 ##### *Sprites*
 
