@@ -439,7 +439,7 @@ Please note: To NOT use media queries within a site that isn't responsive then c
 
 ##### *Image replacement*
 
-If we need to create a link or have a logo or image which needs to have text for SEO purposes we can use image replacement to keep the text but replace it with the image / logo we require. This helps keep up to web standards but also have a visible link. To use this simply make sure all the dimensions for the image are within the class styling along with the background image you are using and include the mixin like this: `@include img-replace;`
+If we need to create a link or have a logo / image which needs to have text for SEO purposes instead of inserting it in our HTML as an image we can apply another element tag such as an 'a' tag and simply use image replacement to keep the text but replace it with the image / logo we require. This helps keep up to web standards but also have a visible link. To use this simply make sure all the dimensions for the image are within the class styling along with the background image you are using and include the mixin like this: `@include img-replace;`
 
 ##### *Sprites*
 
