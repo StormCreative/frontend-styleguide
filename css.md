@@ -413,7 +413,7 @@ Some things in CSS are a bit tedious to write, especially with CSS3 and the many
 
 Responsive design is becoming more a part of the team projects so a media queries mixin was created which will target devices 568px or below showing mobile designs and anything greater will show desktop styling. To help improve this speed development, be easier to use and work with ie8! this mixin ticks all the boxes.
 
-To make the mixin work we have to import it first into the `_structure.scss` file make sure that the variable in our config/settings `$MQs` is set to true and that a stylesheet called nomqs.scss is created with the main stylesheet of `layout` imported into this and our variable `$MQs` is at the top with the value set to false. We need to do this so that ie8 will read this stylesheet as normal content and this will then work for desktop as they don't read media queries.
+To make the mixin work we have to import it first into the `_structure.scss` file make sure that the variable in our config/settings `$MQs` is set to true and that a stylesheet called nomq.scss is created with the main stylesheet of `layout` imported into this and our variable `$MQs` is at the top with the value set to false. We need to do this so that ie8 will read this stylesheet as normal content and this will then work for desktop as they don't read media queries.
 
 The media query mixin is now nearly ready to use but we need to check one more thing before it can be used. We need to navigate to our core folder within Pegisis, and then open up the settings folder and then site.php. We have to make sure that we set the question marks `$settings[ 'MEDIA_QUERIES' ] = ????;` to TRUE.
 
