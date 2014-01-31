@@ -339,7 +339,67 @@ This is the folder that will hold our structure file which all imports will be h
 
 ##### *Grid*
 
-Grids, used to help create a column structure to a website. The grid system we use is build in-house using other methods of grid compiled into one. 
+Grids are used to help create a column structure to a website. The grid system we use is build in-house using other methods of grid and compiled into one. To use the mixin it must first be imported into the main `_structure.scss` file and within the `config/_settings.scss` the variable `$grid` should be set to true.
+
+Within the HTML the parent block must use a class of `grid` and its children (next elements within the block) have a class of `grid__????`. The question marks are the width that we want to set for our column. The class names with the values are show below:
+
+```scss
+
+
+    // Grid Full
+    .grid__full {
+        width: 100%;
+    }
+
+    // Grid half
+    .grid__half {
+        width: 50%;
+    }
+
+    // THIRDS
+    // Grid third
+    .grid__third {
+        width: 33.33333%;
+    }
+
+    // Grid two third
+    .grid__two-third {
+      width: 66.66666%;
+    }
+
+    // QUARTERS
+    // Grid quarter
+    .grid__quarter {
+        width: 25%;
+    }
+
+    // Grid three quarter
+    .grid__three-quarter {
+        width: 75%;
+    }
+
+    // FIFTHS
+    // Grid fifths
+    .grid__fifth {
+        width: 20%;
+    }
+
+    // Grid two fifths
+    .grid__two-fifth {
+        width: 40%;
+    }
+
+    // Grid three fifths
+    .grid__three-fifth {
+        width: 60%;
+    }
+
+    // Grid four fifths
+    .grid__four-fifth {
+        width: 80%;
+    }
+
+```
 
 ##### Mixins
 
@@ -371,7 +431,7 @@ The mixin is all setup and ready to use. To use this we need to include it withi
 
 ```
 
-Please note: To NOT use media queries within a site that isn't responsive then turn all the variables mentioned above to false.
+Please note: To NOT use media queries within a site that isn't responsive then change the values of all the variables mentioned above to false.
 
 ##### *Image replacement*
 
