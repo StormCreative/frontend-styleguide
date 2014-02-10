@@ -1,6 +1,6 @@
 ## Storm Creative Media CSS Styleguide - Version 1.1
 
-Last updated: 30/01/2014
+Last updated: 10/02/2014
 
 To keep code tidy, maintainable and a little less ugly we need to adhere to a unified Styleguide across the team. This document will cover the techniques and preferred practise by the Storm Creative development team.
 
@@ -15,6 +15,7 @@ What this document will cover:
   * [Imports](css.md#imports)
 * [CSS Structure](css.md#css-structure)
   * [Class names](css.md#class-names)
+  * [BEM](css.md#bem)
   * [js-hooks](css.md#js-hooks)
   * [Format](css.md#format)
   * [Layout](css.md#layout)
@@ -122,6 +123,72 @@ Applying styles to HTML requires the use of classes (NOT ID's - it takes 256 cla
 
 ```
 
+#### BEM
+
+Another way to apply good class naming is to use a front-end methodology called BEM (Block, Element, Modifier). We try to use BEM as much as possible as this helps us to have reusable but specific class names. The idea of BEM is to help create the layout into blocks and give a reasonable class name to them and then apply that class name with an extension to all elements or blocks held within. 
+
+##### Blocks
+
+When building a 'component', the block name should be a relevant name for the component. If we were creating our navigation for example we would call the class 'navigation'. This is our block and is telling us this is the navigation. Within here we might have a logo and navigation links. Within here we can add an element for our logo, but we can add another block within the navigation block for our links.
+
+```html
+
+
+  <nav class="navigation">
+    <a href="#">Logo</a>
+    <ul class="navigation-links">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+    </ul>
+  </nav>
+
+```
+
+As shown we have just added another block for our links called 'navigation-links'. We can now apply the element classes onto the logo and the links.
+
+##### Elements
+
+An element is a container within a block and can never appear outside of a container with the block name on. For example using the classes for our navigation we can apply the following classes to our elements like so:
+
+```html
+
+
+  <nav class="navigation">
+    <a href="#" class="navigation__logo">Logo</a>
+    <ul class="navigation-links">
+      <li class="navigation-links__link"><a href="#">Link 1</a></li>
+      <li class="navigation-links__link"><a href="#">Link 2</a></li>
+      <li class="navigation-links__link"><a href="#">Link 3</a></li>
+    </ul>
+  </nav>
+
+```
+
+Notice how the extension to show that the element (held within its container block) is double underscore `block__element` this signifies that this is an element extension to the block. It is imported to use the block class name first followed by the element extension and is relevant to what block it is held in. With the navigation example above notice how the navigation logo name is related to the navigation block and the navigation links are related to the navigation-links block.
+
+##### Modifiers
+
+Modifiers should only be applied to an element if the block or element class already exists on the element. So using our current example if we wanted to apply a different colour to one of our links we would do the following: 
+
+```html
+
+
+  <nav class="navigation">
+    <a href="#" class="navigation__logo">Logo</a>
+    <ul class="navigation-links">
+      <li class="navigation-links__link"><a href="#">Link 1</a></li>
+      <li class="navigation-links__link navigation-list__link--red"><a href="#">Link 2</a></li>
+      <li class="navigation-links__link"><a href="#">Link 3</a></li>
+    </ul>
+  </nav>
+
+```
+
+Notice how the extension to show a modifier has been applied is double hyphen and is only added to a current block / element with the relevant class. This shows that it using that current class like the rest but has been modified to change some specific styling. A modifier doesn't have to be just applied to an element but can also be applied to a block, so if we wanted to change our navigation background on a certain page or specific point of the website scroll we could apply a modifier like so: `navigation navigation--alternative`.
+
+For more information about BEM or understanding the syntax better please visit [http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/](this post).
+
 #### js-hooks
 
 If we are applying javascript to a class then we apply a js-hook to the name. This is to let us know that the element is using javascript and IS NOT TO BE USED as a CSS name to style. If we need to apply styling to that element this is when we can apply an additional class for styling purposes. eg:
@@ -176,7 +243,7 @@ An example of good code markup:
                 border-radius: 0.25em; // use em measurement = 8px
     }
 
-    .services__list {
+    .services-list {
         color: #ED1B24;
         display: inline-block;
         font-family: 'Arial';
@@ -214,7 +281,7 @@ You should document and comment code as much as you possibly can, what may seem 
     Here we will copy over the relevant HTML that we used to apply our styles to, making sure that it is correctly indented.
 
         <section class="services">
-            <ul class="services__list">
+            <ul class="services-list">
                 <li>Service 1</li>
                 <li>Service 2</li>
                 <li>Service 3</li>
@@ -256,8 +323,8 @@ Don't Repeat Yourself. Nobody wants to be writing the same code over again or du
     }
 
     // Services and products listings
-    .services__list,
-    .products__list {
+    .services-list,
+    .products-list {
         font-family: 'Arial';
         font-size: 1em; // 16px
         letter-spacing: -0.32em; // remove our margin on the li's so we can display them inline block and have a true margin
