@@ -187,7 +187,7 @@ Modifiers should only be applied to an element if the block or element class alr
 
 Notice how the extension to show a modifier has been applied is double hyphen and is only added to a current block / element with the relevant class. This shows that it using that current class like the rest but has been modified to change some specific styling. A modifier doesn't have to be just applied to an element but can also be applied to a block, so if we wanted to change our navigation background on a certain page or specific point of the website scroll we could apply a modifier like so: `navigation navigation--alternative`.
 
-For more information about BEM or understanding the syntax better please visit [http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/](this post).
+For more information about BEM or understanding the syntax better please visit [this post](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/).
 
 #### js-hooks
 
