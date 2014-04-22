@@ -1,6 +1,6 @@
-## Storm Creative Media CSS Styleguide - Version 1.1
+## Storm Creative Media CSS Styleguide - Version 1.2
 
-Last updated: 10/02/2014
+Last updated: 22/04/2014
 
 To keep code tidy, maintainable and a little less ugly we need to adhere to a unified Styleguide across the team. This document will cover the techniques and preferred practise by the Storm Creative development team.
 
