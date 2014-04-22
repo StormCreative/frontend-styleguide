@@ -510,7 +510,7 @@ If we need to create a link or have a logo / image which needs to have text for 
 
 ##### *Sprites*
 
-Sprites are used to group multiple images into one mapped file. This will store all background images in one safe file which will help compress the file size and can speed up browser processing. To find out how to use the sprite within a project please read the [sprite manual](sprite_manual.md) which is also found within this series of documents for the Frontend styleguide.
+Sprites are used to group multiple images into one mapped file. This will store all background images in one safe file which will help compress the file size and can speed up browser processing. To find out how to use the sprite within a project please read the [sprite manual](sprite-manual.md) which is also found within this series of documents for the Frontend styleguide.
 
 ##### *Retina*
 
