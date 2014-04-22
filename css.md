@@ -510,13 +510,11 @@ If we need to create a link or have a logo / image which needs to have text for 
 
 ##### *Sprites*
 
-To reduce file size and increase speed we use sprites which are a combination of all background images across the site in one main image / file. The main setup is to create a fireworks file for a normal sprite and a retina sprite. We save these in a folder held within our images folder called `_source` and saved as a fireworks .png file as `sprite` and `sprite@2x`. We can now import our background images into each file and make sure we leave at least a pixel spacing between each image and exporting them as `sprite.png` and `sprite_2x.png` (_2x tells us that this is our retina sprite image so we need to make sure its saved in our retina folder).
-
-Now we have set up the structure for our sprite we need to now use the mixin created which will ask us to provide the co-ordinates of where our image we want to show is in relation to our sprite. We do this by running this line of code within the class we want to add the background image... `@include sprite(-x -y);` This will then pick up the co-ordinates for our image. We also need to make sure that within the variables file we change the width of that variable to the size of our sprite.png image file.
+Sprites are used to group multiple images into one mapped file. This will store all background images in one safe file which will help compress the file size and can speed up browser processing. To find out how to use the sprite within a project please read the [sprite manual](sprite_manual.md) which is also found within this series of documents for the Frontend styleguide.
 
 ##### *Retina*
 
-Retina display devices are becoming more apparent so when we look at our images on these devices they look a little pixelated and not as sharp as they should be. To do this we can either use the sprite for our background images as mentioned [above](css.md#sprites) or we can apply our retina mixin to a class (mainly for header backgrounds as they are not in our sprites) like so:
+Retina display devices are becoming more apparent so when we look at our images on these devices they look a little pixelated and not as sharp as they should be. To do this we can either use the sprite for our background images or we can apply our retina mixin to a class (mainly for header backgrounds as they are not in our sprites) like so:
 
 ```scss
 
