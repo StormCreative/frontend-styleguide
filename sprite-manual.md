@@ -15,7 +15,6 @@ What this manual will cover:
 * [Image setup and generation](sprite-manual.md#image-generation)
 * [Implementation of the mixin within our styles](sprite-manual.md#implementation)
 * [Helpful pointers](sprite-manual.md#helpful-pointers)
-* [Extras - hovers, layout etc]()
 
 ---
 ### Installation
@@ -25,7 +24,6 @@ The sprite generator that we will be using is run using compass. Compass is anot
 <pre>
   <code>
   	sudo gem install compass
-
   </code>
 </pre>
 
@@ -36,7 +34,6 @@ If you already compass installed just make sure you update the version of compas
 <pre>
   <code>
 	sudo gem update --system
-
   </code>
 </pre>
 
@@ -71,7 +68,6 @@ Like SASS when we run the shell command to watch for changes within our styleshe
   <code>
   	cd Dropbox/Sites/Pegisis
   	compass watch
-
   </code>
 </pre>
 
@@ -102,7 +98,6 @@ All of the setup for our compass running and reading of SASS files is in place, 
   	- images
   		- sprite
   		- sprite-retina
-
   </code>
 </pre>
 
@@ -162,6 +157,8 @@ That is all we need to add, what the mixin will do is work out the co-ordinates 
 ```
 
 Notice that the height, width and background-size has already been calculated just by providing the correct image name.
+
+Once that has been completed double check that your image is displaying for both normal and retina devices. For more helpful pointers please read the section below.
 
 ---
 ### Helpful pointers
