@@ -4,3 +4,8 @@ To keep code tidy, maintainable and a little less ugly we need to adhere to a un
 the techniques and preferred practise by Storm Creative development team.
 
 Consistency is key, a common formatting must be followed at all times. This is achieved through consistent syntax, commenting and naming conventions.
+
+---
+
+* [CSS Styleguide](css.md)
+* [Sprite manual](sprite-manual.md)
