@@ -1,6 +1,6 @@
 ## Storm Creative Media sprite manual - Version 1.0
 
-Last updated: 22/04/2014
+Last updated: 27/05/2014
 
 Due to troubles with the existing way we implemented sprites with images being lost, or overwritten, as well as the amount of time spent creating it within Fireworks, a new method for sprite generation was needed. Within this manual it will show you how to use the new sprite generator for Pegisis.
 
@@ -113,7 +113,7 @@ The folder structure is now in place, next is to add the images to our folder. A
 
 You will notice that nothing has happened within our images folder and that the images are just sitting in their relevant folders with no sprite image being generated, to generate the sprite using compass' magic all we need to do is save a stylesheet and this will run the compass watch in the terminal and generate two images which will be used as our sprites.
 
-Please note: This will have to be done everytime you add images to the sprite folders to ensure that your image has been added to the sprite.
+Please note: This will have to be done everytime you add images to the sprite folders to ensure that your image has been added to the sprite. Also to make sure that an image is included in both folders as compass will not run and no styles will be updated.
 
 ---
 ### Implementation
@@ -165,4 +165,4 @@ Once that has been completed double check that your image is displaying for both
 
 Here are a few helpers that will help you when using the mixin to implement the sprite:
 
-******* NOTES TO COME *******
+- Make sure that the layout for the sprite is set to horizontal or vertical to enable the sprite to work correctly. Currently there is an issue that breaks when a smart layout is set which is what we would ideally want but until a issue with the fix has been released, please refrain from using that layout.

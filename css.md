@@ -1,6 +1,6 @@
-## Storm Creative Media CSS Styleguide - Version 1.2
+## Storm Creative Media CSS Styleguide - Version 1.3
 
-Last updated: 22/04/2014
+Last updated: 27/05/2014
 
 To keep code tidy, maintainable and a little less ugly we need to adhere to a unified Styleguide across the team. This document will cover the techniques and preferred practise by the Storm Creative development team.
 
@@ -35,29 +35,68 @@ What this document will cover:
     * [Sprites](css.md#sprites)
     * [Retina](css.md#retina)
     * [Prefixes](css.md#prefixes)
+* [Admin system](css.md#admin-system)
 
 ---
 ### Initial setup
 
-The CSS stylesheet language being used is SASS, which is a Ruby Gem and can be installed via the command line. For more information on how to install SASS please use: [http://sass-lang.com/](http://sass-lang.com/)
+The CSS stylesheet language being used is SASS, which is a Ruby Gem and can be installed via the command line. This language is also available with Compass which is another framework that is used at Storm. Compass is primarily used for the generation of our sprites but as SASS is used we can also use Compass to help run this.
 
-Once SASS is installed, create a file in the main directory called sass.sh and inside this file include the following code:
+#### Installation
+
+Compass is another open source CSS authoring framework, just like SASS. Compass, however, also uses SASS so this will implement nicely into our current way of building. Firstly, we need to ensure that the compass gem is installed on our machine. Access the terminal and within the main directory run the install command:
 
 <pre>
   <code>
-    #!/bin/sh
-
-    #sass --style expanded --watch assets/styles/sass:assets/styles --debug-info
-    sass --style compressed --watch assets/styles/sass:assets/styles
-
-    exit 0
-
+    sudo gem install compass
   </code>
 </pre>
 
-We comment out the sass watch that we don't want to use by displaying a hashtag `#` before it.
+Then press enter, provide your password and press enter again. This will then install compass onto your machine as well as SASS.
 
-Our SASS setup is now complete, next the folder structure needs to be completed to get our SASS up and running.
+If you already have compass installed just make sure you update your version of compass by running a system gem update in terminal:
+
+<pre>
+  <code>
+    sudo gem update --system
+  </code>
+</pre>
+
+Followed by the gem install compass. For more help on installing or upgrading compass please visit the [compass website](http://compass-style.org/install/).
+
+---
+#### Checking configurations
+
+Now that we have successfully installed compass onto our machine, we make sure we have the correct and most up-to-date version of Pegisis. We then need to access the root directory and locate the file called `config.rb`, then open that file up within sublime (or another text editor).
+
+You will notice that the configurations are already set up to the correct paths, but if for some reason a path needs to be changed then this will be the file to change them. The setup already is show below as a reference: 
+
+```ruby
+  
+
+    http_path = "/"
+    css_dir = "assets/styles"
+    sass_dir = "assets/styles/sass"
+    images_dir = "assets/images"
+    relative_assets = true
+
+```
+
+The `relative_assets` is set to true as we want the path for our background sprite to have the `../images` path rather than our images_dir path of `assets/images`.
+
+---
+#### Running compass
+
+Like SASS when we run the shell command to watch for changes within our stylesheets, we run a command within terminal called `compass watch`. Navigate to the directory of your project, in this case mine is Pegisis and run the command.
+
+<pre>
+  <code>
+    cd Dropbox/Sites/Pegisis
+    compass watch
+  </code>
+</pre>
+
+This will now run SASS and also look for any other changes within the compass directories such as our images folder. So now we don't need to run `sh sass.sh` anymore as the above command will do it for us.
 
 ---
 ### Folder setup
@@ -555,3 +594,8 @@ One main shortcut that we use is the mixin for prefixes, a prefix are a way for 
 ```
 
 All the examples above are the main ones used across projects and will target all browsers.
+
+---
+### Admin system
+
+Our contact management system, uses the same coding style as above but instead of running compass straight from our project folder within terminal we have to navigate to the admin folder. Once navigated to this folder run compass watch and then styling changes will then take effect. Also, within the admin folder it has its own config.rb file with the correct paths set up solely for the admin system.
